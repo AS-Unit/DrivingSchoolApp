@@ -10,22 +10,18 @@ import java.time.LocalDate;
 
 @Entity
 public class Course {
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    LocalDate dateCreateCourse;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    LocalDate dateEditCourse;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateStartCourse;
-
     private String lecturer;
     private String placeCourse;
     private int maxCountOfStudents;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    LocalDate dateCreateCourse;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    LocalDate dateEditCourse;
 
     public Course() {
     }

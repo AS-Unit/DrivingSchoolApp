@@ -3,14 +3,21 @@ package com.asu.dsa.service;
 import com.asu.dsa.model.Student;
 import com.asu.dsa.repository.StudentRepository;
 import com.asu.dsa.service.exception.NoStudentFoundException;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@AllArgsConstructor
+@Service
 public class StudentService {
+
     private final StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     // get all students
     public List<Student> getAllStudent() {

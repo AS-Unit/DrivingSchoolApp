@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Prawo Jazdy</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link href='<c:url value="/resources/plugins/fontawesome-free/css/all.min.css"/>' rel="stylesheet">
+    <!-- Ionicons -->
+    <link href='<c:url value="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>' rel="stylesheet">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link href='<c:url value="/resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>' rel="stylesheet">
+    <!-- iCheck -->
+    <link href='<c:url value="/resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css"/>' rel="stylesheet">
+    <!-- JQVMap -->
+    <link href='<c:url value="/resources/plugins/jqvmap/jqvmap.min.css"/>' rel="stylesheet">
+    <!-- Theme style -->
+    <link href='<c:url value="/resources/dist/css/adminlte.min.css"/>' rel="stylesheet">
+    <!-- overlayScrollbars -->
+    <link href='<c:url value="/resources/plugins/overlayScrollbars/css/OverlayScrollbars.min.css"/>' rel="stylesheet">
+    <!-- Daterange picker -->
+    <link href='<c:url value="/resources/plugins/daterangepicker/daterangepicker.css"/>' rel="stylesheet">
+    <!-- Datetimepicker picker -->
+    <link href='<c:url value="/resources/build/datatimepicker/bootstrap-datetimepicker.css"/>' rel="stylesheet">
+    <!-- summernote -->
+    <link href='<c:url value="/resources/plugins/summernote/summernote-bs4.css"/>' rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link href='<c:url value="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" />' rel="stylesheet">
+</head>

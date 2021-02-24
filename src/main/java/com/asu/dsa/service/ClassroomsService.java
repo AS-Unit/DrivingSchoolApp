@@ -1,0 +1,60 @@
+package com.asu.dsa.service;
+
+import com.asu.dsa.model.Classroom;
+import com.asu.dsa.repository.ClassroomsRepository;
+import com.asu.dsa.service.exception.NoClassroomFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@Service
+public class ClassroomsService {
+    private final ClassroomsRepository classroomsRepository;
+
+    @Autowired
+
+    public ClassroomsService(ClassroomsRepository classroomsRepository) {
+        this.classroomsRepository = classroomsRepository;
+    }
+
+    // get all classroom
+    public List<Classroom> getAllClassrooms() {
+        return classroomsRepository.findAll();
+    }
+
+    //get classroom by id
+    public Classroom getClassroomById(Long id) {
+        return classroomsRepository.findById(id)
+                .orElseThrow(() -> {
+                    throw new NoClassroomFoundException(id);
+                });
+    }
+    //add classroom
+
+    public Classroom addClassroom(Classroom classroom) {
+        classroom.setDateCreateClassroom(LocalDate.now());
+        return classroomsRepository.save(classroom);
+    }
+
+    // edit classroom
+    public Classroom updateClassroom(Long id) {
+        Classroom classroomToUpdate = classroomsRepository.findById(id)
+                .orElseThrow(() -> {
+                    throw new NoClassroomFoundException(id);
+                });
+        classroomToUpdate.setDateEditClassroom(LocalDate.now());
+        return classroomsRepository.save(classroomToUpdate);
+    }
+
+    // delete classroom
+    public Classroom removeClassroom(Long id) {
+        Classroom classroom = classroomsRepository.findById(id)
+                .orElseThrow(() -> {
+                    throw new NoClassroomFoundException(id);
+                });
+        classroomsRepository.delete(classroom);
+        return classroom;
+    }
+}

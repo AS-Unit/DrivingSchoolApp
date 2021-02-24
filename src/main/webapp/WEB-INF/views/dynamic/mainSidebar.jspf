@@ -93,7 +93,7 @@
                     </a>
                     <ul style="margin-left: 12%" class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href='<c:url value="/employeeList"/>' class="nav-link">
+                            <a href='<c:url value="/employees"/>' class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Kadra</p>
                             </a>

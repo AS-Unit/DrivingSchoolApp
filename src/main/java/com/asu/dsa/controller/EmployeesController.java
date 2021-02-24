@@ -2,11 +2,13 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Employee;
 import com.asu.dsa.service.EmployeesService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/employees")
 public class EmployeesController {
 
@@ -17,18 +19,20 @@ public class EmployeesController {
     }
 
     @GetMapping
-    public List<Employee> getAllEmployees() {
-        return employeesService.getAllEmployee();
-    }
-
-    @GetMapping("editEmployee/{id}")
-    public Employee getEmployeeById(@PathVariable Long id) {
-        return employeesService.getEmployeeById(id);
+    public String getAllEmployees(Model model) {
+        List<Employee> list = employeesService.getAllEmployee();
+        model.addAttribute("employee", list);
+        return "views/employee/employees";
     }
 
     @PostMapping("/addNewEmployee")
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeesService.addEmployee(employee);
+    }
+
+    @GetMapping("editEmployee/{id}")
+    public Employee getEmployeeById(@PathVariable Long id) {
+        return employeesService.getEmployeeById(id);
     }
 
     @PutMapping("/editEmployee/{id}")

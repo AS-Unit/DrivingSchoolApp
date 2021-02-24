@@ -28,7 +28,7 @@
     <!-- Daterange picker -->
     <link href='<c:url value="/resources/plugins/daterangepicker/daterangepicker.css"/>' rel="stylesheet">
     <!-- Datetimepicker picker -->
-    <link href='<c:url value="/resources/build/datatimepicker/bootstrap-datetimepicker.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/plugins/datatimepicker/bootstrap-datetimepicker.css"/>' rel="stylesheet">
     <!-- summernote -->
     <link href='<c:url value="/resources/plugins/summernote/summernote-bs4.css"/>' rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->

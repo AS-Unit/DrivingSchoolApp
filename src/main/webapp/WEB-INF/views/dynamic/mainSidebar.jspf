@@ -1,0 +1,155 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-5 pb-2 mb-2 d-flex">
+
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+       with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href='<c:url value="/index"/>' class="nav-link">
+                        <i class="nav-icon far fas fa-tachometer-alt"></i>
+                        <p>
+                            Strona głowna
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-user"></i>
+                        <p>
+                            Moje konto
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-graduation-cap"></i>
+                        <p>
+                            Strefa kursanta
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul style="margin-left: 12%" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>Kursy</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-laptop-house"></i>
+                                <p>Teoria w domu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-laptop"></i>
+                                <p>Testy online</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                        <p>
+                            Strefa instruktora
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul style="margin-left: 12%" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>Kursy</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
+                                <p>Terminarz</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            Administracja
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul style="margin-left: 12%" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href='<c:url value="/employeeList"/>' class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Kadra</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='<c:url value="/studentsList"/>' class="nav-link">
+                                <i class="nav-icon fas fa-user-graduate"></i>
+                                <p>Kursanci</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='<c:url value="/courses"/>' class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>Kursy</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='<c:url value="/classroomList"/>' class="nav-link">
+                                <i class="nav-icon fas fa-door-open"></i>
+                                <p>Sale lekcyjne</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='<c:url value="/vehicles"/>' class="nav-link">
+                                <i class="nav-icon fas fa-car"></i>
+                                <p>Pojazdy</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Ustawienia
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul style="margin-left: 12%" class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-check-square"></i>
+                                <p>Grupy,uprawnienia</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-question-circle"></i>
+                        <p>Pomoc</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

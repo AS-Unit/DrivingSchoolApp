@@ -23,6 +23,11 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
+    // add new vehicle
+    public Vehicle addNewVehicle(Vehicle vehicle) {
+        return vehicleRepository.save(vehicle);
+    }
+
     // get vehicle by id
     public Vehicle getVehicleById(Long id) {
         return vehicleRepository.findById(id)
@@ -30,6 +35,7 @@ public class VehicleService {
                     throw new NoVehicleFoundException(id);
                 });
     }
+
 
     // update vehicle
     public Vehicle updateVehicle(Long id) {

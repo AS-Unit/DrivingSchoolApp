@@ -40,11 +40,11 @@ public class VehicleController {
         return vehicleService.getVehicleById(id);
     }
 
-    // get view for edit existed vehicle
+/*    // get view for edit existed vehicle
     @GetMapping("/editVehicle/{id}")
     public String getViewForEditVehicle() {
         return "view/vehicle/editVehicle";
-    }
+    }*/
 
     // save edited vehicle
     @PostMapping("/editVehicle/{id}")

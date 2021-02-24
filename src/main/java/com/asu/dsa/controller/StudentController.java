@@ -41,10 +41,10 @@ public class StudentController {
     }
 
     // get view for edit existed student
-    @GetMapping("/editStudent/{id}")
+/*    @GetMapping("/editStudent/{id}")
     public String getViewForEditStudent() {
         return "view/students/editStudent";
-    }
+    }*/
 
     // save edited student
     @PostMapping("/editStudent/{id}")

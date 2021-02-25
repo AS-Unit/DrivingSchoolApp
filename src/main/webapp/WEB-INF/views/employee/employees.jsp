@@ -97,6 +97,11 @@
                                                                class="btn btn-success bg-gradient-success"
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
                                                         </div>
+                                                        <div class="col md-6">
+                                                            <a href="#"
+                                                               class="btn btn-success bg-gradient-danger"
+                                                               style="width: 45px"><i class="fas fa-trash-alt"></i></a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>

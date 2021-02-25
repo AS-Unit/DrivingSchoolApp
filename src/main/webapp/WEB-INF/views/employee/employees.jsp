@@ -39,7 +39,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="/addNewEmployee"/>'
+                                            <a href='<c:url value="/employees/addNewEmployee"/>'
                                                class="btn btn-block btn-success btn-lg">Dodaj pracownika <i
                                                     class="nav-icon fas fa-plus"></i></a>
                                         </div>

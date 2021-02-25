@@ -5,6 +5,7 @@ import com.asu.dsa.service.EmployeesService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -24,10 +25,15 @@ public class EmployeesController {
         model.addAttribute("employee", list);
         return "views/employee/employees";
     }
+    @GetMapping("/addNewEmployee")
+    public String viewNewEmployee(){
+        return "views/employee/addNewEmployee";
+    }
 
     @PostMapping("/addNewEmployee")
-    public Employee addEmployee(@RequestBody Employee employee) {
-        return employeesService.addEmployee(employee);
+    public RedirectView addEmployee(@ModelAttribute Employee employee) {
+        employeesService.addEmployee(employee);
+        return new RedirectView("/employees");
     }
 
     @GetMapping("editEmployee/{id}")

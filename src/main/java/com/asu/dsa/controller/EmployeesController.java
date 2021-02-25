@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/employees")
@@ -37,13 +38,16 @@ public class EmployeesController {
     }
 
     @GetMapping("editEmployee/{id}")
-    public Employee getEmployeeById(@PathVariable Long id) {
-        return employeesService.getEmployeeById(id);
+    public String getEmployeeById(@PathVariable("id") Long id, Model model) {
+       Employee employee = employeesService.getEmployeeById(id);
+        model.addAttribute("employee", employee);
+        return "views/employee/editEmployee";
     }
 
-    @PutMapping("/editEmployee/{id}")
-    public Employee updateEmployee(@PathVariable Long id) {
-        return employeesService.updateEmployee(id);
+    @PostMapping("/editEmployee/{id}")
+    public RedirectView updateEmployee(@PathVariable("id") Long id) {
+        employeesService.updateEmployee(id);
+        return new RedirectView("/employees");
     }
 
     @DeleteMapping("/{id}")

@@ -15,6 +15,7 @@ import java.util.Optional;
 public class EmployeesController {
 
     private final EmployeesService employeesService;
+    private Long id;
 
     public EmployeesController(EmployeesService employeesService) {
         this.employeesService = employeesService;
@@ -50,8 +51,11 @@ public class EmployeesController {
         return new RedirectView("/employees");
     }
 
-    @DeleteMapping("/{id}")
-    public Employee removeEmployee(@PathVariable Long id) {
-        return employeesService.removeEmployee(id);
+//    @DeleteMapping("/{id}")
+    @GetMapping("delete/{id}")
+    public RedirectView removeEmployee(@PathVariable Long id) {
+        employeesService.removeEmployee(id);
+        System.out.println(id);
+        return new RedirectView("/employees");
     }
 }

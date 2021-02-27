@@ -55,13 +55,12 @@ public class EmployeesService {
 
     // delete employee
 
-    public Employee removeEmployee(Long id) {
+    public void removeEmployee(Long id) {
         Employee employee = employeesRepository.findById(id)
                 .orElseThrow(() -> {
                     throw new NoEmployeeFoundException(id);
                 });
         employeesRepository.delete(employee);
-        return employee;
     }
 
 }

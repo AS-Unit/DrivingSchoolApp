@@ -92,7 +92,7 @@
                                                 <td>
                                                     <div class="row">
                                                         <div class="col md-6">
-                                                            <a href='<c:url value="/editClassroom/${classroom.id}"/>'
+                                                            <a href='<c:url value="/classrooms/editClassroom/${classroom.id}"/>'
                                                                class="btn btn-success bg-gradient-success"
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
                                                         </div>

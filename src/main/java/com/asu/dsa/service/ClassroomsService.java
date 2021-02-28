@@ -39,13 +39,9 @@ public class ClassroomsService {
     }
 
     // edit classroom
-    public Classroom updateClassroom(Long id) {
-        Classroom classroomToUpdate = classroomsRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new NoClassroomFoundException(id);
-                });
-        classroomToUpdate.setDateEditClassroom(LocalDate.now());
-        return classroomsRepository.save(classroomToUpdate);
+    public Classroom updateClassroom(Classroom newClassroom) {
+       newClassroom.setDateEditClassroom(LocalDate.now());
+        return classroomsRepository.save(newClassroom);
     }
 
     // delete classroom

@@ -38,13 +38,16 @@ public class ClassroomsController {
     }
 
     @GetMapping("editClassroom/{id}")
-    public Classroom getClassroomById(@PathVariable Long id) {
-        return classroomsService.getClassroomById(id);
+    public String getClassroomById(@PathVariable("id") Long id, Model model) {
+        Classroom classroom = classroomsService.getClassroomById(id);
+        model.addAttribute("classroom", classroom);
+        return "views/classroom/editClassroom";
     }
 
-    @PutMapping("/editClassroom/{id}")
-    public Classroom updateClassroom(@PathVariable Long id) {
-        return classroomsService.updateClassroom(id);
+    @PostMapping("/editClassroom/{id}")
+    public RedirectView updateClassroom(@ModelAttribute Classroom classroom) {
+        classroomsService.updateClassroom(classroom);
+        return new RedirectView("/classrooms");
     }
 
     @DeleteMapping("/{id}")

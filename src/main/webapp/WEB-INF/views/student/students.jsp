@@ -84,7 +84,7 @@
                                                     <td>${student.city}</td>
                                                     <td>
 
-                                                        <a href='<c:url value="/editStudent/${student.id}"/>' class="btn btn-success bg-gradient-warning" style="width: 50px"><i class="fas fa-edit"></i></a>
+                                                        <a href='<c:url value="/students/editStudent/${student.id}"/>' class="btn btn-success bg-gradient-warning" style="width: 50px"><i class="fas fa-edit"></i></a>
 
                                                         <button type="button"
                                                                 class="btn btn-success bg-gradient-danger"

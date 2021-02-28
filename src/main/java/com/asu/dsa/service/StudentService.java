@@ -39,13 +39,8 @@ public class StudentService {
     }
 
     // update student
-    public Student updateStudent(Long id) {
-        Student studentToUpdate = studentRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new NoStudentFoundException(id);
-                });
-        studentToUpdate.setDateModifyStudent(LocalDate.now());
-        return studentRepository.save(studentToUpdate);
+    public Student updateStudent(Student student) {
+        return studentRepository.save(student);
     }
 
     // delete student

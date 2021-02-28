@@ -29,8 +29,10 @@ public class StudentController {
 
     // get student by id for edit
     @GetMapping("editStudent/{id}")
-    public Student getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
+    public String getStudentById(@PathVariable("id") Long id, Model model) {
+        Student student = studentService.getStudentById(id);
+        model.addAttribute("student", student);
+        return "views/student/editStudent";
     }
 
     // get view for add new student
@@ -54,8 +56,9 @@ public class StudentController {
 
     // save edited student
     @PostMapping("/editStudent/{id}")
-    public Student saveEditedStudent(@PathVariable Long id) {
-        return studentService.updateStudent(id);
+    public RedirectView saveEditedStudent(@ModelAttribute Student student) {
+        studentService.updateStudent(student);
+        return new RedirectView("/students");
     }
 
     // remove existed student

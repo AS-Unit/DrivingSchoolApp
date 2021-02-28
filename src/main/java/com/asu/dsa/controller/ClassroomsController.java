@@ -2,11 +2,13 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Classroom;
 import com.asu.dsa.service.ClassroomsService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/classrooms")
 public class ClassroomsController {
 
@@ -17,8 +19,10 @@ public class ClassroomsController {
     }
 
     @GetMapping
-    public List<Classroom> getAllClassrooms() {
-        return classroomsService.getAllClassrooms();
+    public String getAllClassrooms(Model model) {
+        List<Classroom> list = classroomsService.getAllClassrooms();
+        model.addAttribute("classroom", list);
+        return "views/classroom/classrooms";
     }
 
     @GetMapping("editClassroom/{id}")

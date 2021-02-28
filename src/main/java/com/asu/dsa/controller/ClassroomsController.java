@@ -50,8 +50,9 @@ public class ClassroomsController {
         return new RedirectView("/classrooms");
     }
 
-    @DeleteMapping("/{id}")
-    public Classroom removeClassroom(@PathVariable Long id) {
-        return classroomsService.removeClassroom(id);
+    @GetMapping("delete/{id}")
+    public RedirectView removeClassroom(@PathVariable Long id) {
+        classroomsService.removeClassroom(id);
+        return new RedirectView("/classrooms");
     }
 }

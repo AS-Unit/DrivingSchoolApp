@@ -40,17 +40,16 @@ public class ClassroomsService {
 
     // edit classroom
     public Classroom updateClassroom(Classroom newClassroom) {
-       newClassroom.setDateEditClassroom(LocalDate.now());
+        newClassroom.setDateEditClassroom(LocalDate.now());
         return classroomsRepository.save(newClassroom);
     }
 
     // delete classroom
-    public Classroom removeClassroom(Long id) {
+    public void removeClassroom(Long id) {
         Classroom classroom = classroomsRepository.findById(id)
                 .orElseThrow(() -> {
                     throw new NoClassroomFoundException(id);
                 });
         classroomsRepository.delete(classroom);
-        return classroom;
     }
 }

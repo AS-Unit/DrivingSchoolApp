@@ -19,19 +19,19 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
-            <div class="card-info">
-                <div class="card-header">
-                    <div class="container-fluid">
-                        <div class="row mb-2">
-                            <div class="col-sm-6">
-                                <h4 class="m-0 text-dark">Dane sali szkoleniowej</h4>
-                            </div><!-- /.col -->
+        <div class="card-info">
+            <div class="card-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h4 class="m-0 text-dark">Dane sali szkoleniowej</h4>
+                        </div><!-- /.col -->
 
-                        </div><!-- /.row -->
-                    </div><!-- /.container-fluid -->
-                </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
             </div>
-            <!-- /.content-header -->
+        </div>
+        <!-- /.content-header -->
         <form name="sendEditEmployee" method="post" action='<c:url value="/classrooms/editClassroom/${classroom.id}"/>'>
             <!-- Main content -->
             <div class="card-body">
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" placeholder="" id="name" name="name"
-                                           value="${classroom.name}">
+                                           value="${classroom.name}" readonly>
                                 </div>
                             </div>
                         </div>

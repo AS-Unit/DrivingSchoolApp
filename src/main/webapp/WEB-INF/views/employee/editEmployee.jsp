@@ -417,7 +417,7 @@
 
                                 <div class="col-sm-4">
 
-                                    <a href='<c:url value="/employees"/>'  class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href='<c:url value="/employees"/>' class="btn btn-block btn-danger">Anuluj</a>
 
                                 </div>
                                 <div class="col-sm-4">
@@ -432,7 +432,8 @@
                             Data utworzenia recordu:
                             <div class="input-group date" id="dateCreate" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateCreate">
-                                    <input type="text" style="text-align: center" class="form-control datetimepicker-input"
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input"
                                            data-target="#dateCreate"
                                            id="dateCreateEmployee" name="dateCreateEmployee"
                                            value="${employee.dateCreateEmployee}" readonly/>
@@ -444,16 +445,17 @@
                             Data Ostatniej Modyfikacji:
                             <div class="input-group date" id="dateEdit" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateEdit">
-                                    <input type="text" style="text-align: center" class="form-control datetimepicker-input" data-target="#dateEdit"
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input" data-target="#dateEdit"
                                            id="dateEditEmployee" name="dateEditEmployee"
                                            value="${employee.dateEditEmployee}" readonly/>
                                 </div>
                             </div>
                         </div>
-                        </div>
-
                     </div>
+
                 </div>
+            </div>
         </form>
         <!-- /.content -->
     </div>

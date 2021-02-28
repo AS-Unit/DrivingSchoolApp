@@ -26,8 +26,9 @@ public class EmployeesController {
         model.addAttribute("employee", list);
         return "views/employee/employees";
     }
+
     @GetMapping("/addNewEmployee")
-    public String viewNewEmployee(){
+    public String viewNewEmployee() {
         return "views/employee/addNewEmployee";
     }
 
@@ -39,7 +40,7 @@ public class EmployeesController {
 
     @GetMapping("editEmployee/{id}")
     public String getEmployeeById(@PathVariable("id") Long id, Model model) {
-       Employee employee = employeesService.getEmployeeById(id);
+        Employee employee = employeesService.getEmployeeById(id);
         model.addAttribute("employee", employee);
         return "views/employee/editEmployee";
     }
@@ -50,11 +51,10 @@ public class EmployeesController {
         return new RedirectView("/employees");
     }
 
-//    @DeleteMapping("/{id}")
+    //    @DeleteMapping("/{id}")
     @GetMapping("delete/{id}")
     public RedirectView removeEmployee(@PathVariable Long id) {
         employeesService.removeEmployee(id);
-        System.out.println(id);
         return new RedirectView("/employees");
     }
 }

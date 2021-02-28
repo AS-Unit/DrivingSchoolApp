@@ -138,7 +138,7 @@
 
                                 <div class="col-sm-4">
 
-                                    <a href="#" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href="/classrooms" class="btn btn-block btn-danger">Anuluj</a>
 
                                 </div>
                                 <div class="col-sm-4">

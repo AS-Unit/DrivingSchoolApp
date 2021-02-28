@@ -2,11 +2,14 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Student;
 import com.asu.dsa.service.StudentService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/students")
 public class StudentController {
 
@@ -18,8 +21,10 @@ public class StudentController {
 
     // get all students list
     @GetMapping
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudent();
+    public String getAllStudents(Model model) {
+        List<Student> list = studentService.getAllStudent();
+        model.addAttribute("student", list);
+        return "views/student/students";
     }
 
     // get student by id for edit
@@ -31,13 +36,14 @@ public class StudentController {
     // get view for add new student
     @GetMapping("/addNewStudent")
     public String getViewForNewStudent() {
-        return "view/students/addNewStudent";
+        return "views/student/addNewStudent";
     }
 
     // save the new student
     @PostMapping("/addNewStudent")
-    public Student addNewStudent(@RequestBody Student student) {
-        return studentService.addStudent(student);
+    public RedirectView addNewStudent(@ModelAttribute Student student) {
+        studentService.addStudent(student);
+        return new RedirectView("/students");
     }
 
     // get view for edit existed student

@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href='<c:url value="/studentsList"/>' class="nav-link">
+                            <a href='<c:url value="/students"/>' class="nav-link">
                                 <i class="nav-icon fas fa-user-graduate"></i>
                                 <p>Kursanci</p>
                             </a>

@@ -41,7 +41,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="/addNewClassrooms"/>' type="button"
+                                            <a href='<c:url value="/classrooms/addNewClassroom"/>' type="button"
                                                class="btn btn-block btn-primary btn-lg">Dodaj
                                                 salę <i class="nav-icon fas fa-plus"></i></a>
                                         </div>
@@ -95,6 +95,17 @@
                                                             <a href='<c:url value="/editClassroom/${classroom.id}"/>'
                                                                class="btn btn-success bg-gradient-success"
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
+                                                        </div>
+                                                        <div class="col md-6">
+                                                            <a href="/employees/delete/${employee.id}"
+                                                               style="width: 45px"
+                                                               class="btn btn-success bg-gradient-danger"
+                                                               data-toggle="modal"
+                                                               data-target="#delete-modal"
+                                                               id="deleteButton"
+                                                            ><i class="fas fa-trash-alt"></i>
+
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </td>

@@ -98,7 +98,6 @@
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
                                                         </div>
                                                         <div class="col md-6">
-<%--                                                            <form method="get" action='<c:url value="/employees/delete/${employee.id}"/>'>--%>
                                                             <a href="/employees/delete/${employee.id}" style="width: 45px"
                                                                     class="btn btn-success bg-gradient-danger"
                                                                     data-toggle="modal"
@@ -107,7 +106,6 @@
                                                             ><i class="fas fa-trash-alt"></i>
 
                                                             </a>
-<%--                                                            </form>--%>
                                                         </div>
 
                                                     </div>

@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Controller
 @RequestMapping("/employees")
 public class EmployeesController {
 
     private final EmployeesService employeesService;
-    private Long id;
 
     public EmployeesController(EmployeesService employeesService) {
         this.employeesService = employeesService;

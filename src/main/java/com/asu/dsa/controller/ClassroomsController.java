@@ -5,6 +5,7 @@ import com.asu.dsa.service.ClassroomsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -25,14 +26,20 @@ public class ClassroomsController {
         return "views/classroom/classrooms";
     }
 
+    @GetMapping("addNewClassroom")
+    public String viewNewClassroom() {
+        return "views/classroom/addNewClassroom";
+    }
+
+    @PostMapping("/addNewClassroom")
+    public RedirectView addClassroom(@ModelAttribute Classroom classroom) {
+        classroomsService.addClassroom(classroom);
+        return new RedirectView("/classrooms");
+    }
+
     @GetMapping("editClassroom/{id}")
     public Classroom getClassroomById(@PathVariable Long id) {
         return classroomsService.getClassroomById(id);
-    }
-
-    @PostMapping("/addClassroom")
-    public Classroom addClassroom(@RequestBody Classroom classroom) {
-        return classroomsService.addClassroom(classroom);
     }
 
     @PutMapping("/editClassroom/{id}")

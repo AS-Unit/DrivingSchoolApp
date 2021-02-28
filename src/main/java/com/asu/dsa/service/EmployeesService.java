@@ -44,13 +44,9 @@ public class EmployeesService {
 
     // update employee
 
-    public Employee updateEmployee(Long id) {
-        Employee employeeToUpdate = employeesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new NoEmployeeFoundException(id);
-                });
-        employeeToUpdate.setDateEditEmployee(LocalDate.now());
-        return employeesRepository.save(employeeToUpdate);
+    public Employee updateEmployee(Employee newEmploye) {
+        newEmploye.setDateEditEmployee(LocalDate.now());
+        return employeesRepository.save(newEmploye);
     }
 
     // delete employee

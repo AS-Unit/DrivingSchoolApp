@@ -46,8 +46,8 @@ public class EmployeesController {
     }
 
     @PostMapping("/editEmployee/{id}")
-    public RedirectView updateEmployee(@PathVariable("id") Long id) {
-        employeesService.updateEmployee(id);
+    public RedirectView updateEmployee(@ModelAttribute Employee employee) {
+        employeesService.updateEmployee(employee);
         return new RedirectView("/employees");
     }
 

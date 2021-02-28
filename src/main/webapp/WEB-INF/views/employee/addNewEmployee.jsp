@@ -401,7 +401,7 @@
 
                         </div>
 
-                        <div class="col-md-3">
+                        <div class="col-md-3">git
                             Data utworzenia recordu
                         </div>
 

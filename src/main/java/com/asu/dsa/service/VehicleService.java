@@ -31,7 +31,7 @@ public class VehicleService {
     // get vehicle by id
     public Vehicle getVehicleById(Long id) {
         return vehicleRepository.findById(id)
-                .orElseThrow(()-> {
+                .orElseThrow(() -> {
                     throw new NoVehicleFoundException(id);
                 });
     }
@@ -40,7 +40,7 @@ public class VehicleService {
     // update vehicle
     public Vehicle updateVehicle(Long id) {
         Vehicle vehicleToUpdate = vehicleRepository.findById(id)
-                .orElseThrow(()->{
+                .orElseThrow(() -> {
                     throw new NoVehicleFoundException(id);
                 });
         return vehicleRepository.save(vehicleToUpdate);
@@ -49,15 +49,12 @@ public class VehicleService {
     // delete vehicle
     public Vehicle deleteVehicle(Long id) {
         Vehicle vehicleToDelete = vehicleRepository.findById(id)
-                .orElseThrow(()->{
+                .orElseThrow(() -> {
                     throw new NoVehicleFoundException(id);
                 });
         vehicleRepository.delete(vehicleToDelete);
         return vehicleToDelete;
     }
-
-
-
 
 
 }

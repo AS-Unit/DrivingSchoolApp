@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="pl">
@@ -16,7 +15,8 @@
     <!-- Ionicons -->
     <link href='<c:url value="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>' rel="stylesheet">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link href='<c:url value="/resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>'
+          rel="stylesheet">
     <!-- iCheck -->
     <link href='<c:url value="/resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css"/>' rel="stylesheet">
     <!-- JQVMap -->
@@ -32,5 +32,6 @@
     <!-- summernote -->
     <link href='<c:url value="/resources/plugins/summernote/summernote-bs4.css"/>' rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
-    <link href='<c:url value="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" />' rel="stylesheet">
+    <link href='<c:url value="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" />'
+          rel="stylesheet">
 </head>

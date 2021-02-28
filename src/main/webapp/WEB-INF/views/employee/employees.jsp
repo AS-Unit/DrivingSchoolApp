@@ -50,7 +50,9 @@
                                         <div class="col-md-2">
                                             <h5>Pokaż
                                                 <div class="btn-group">
-                                                    <button id="howMany" type="button" class="btn btn-default" value="10">10</button>
+                                                    <button id="howMany" type="button" class="btn btn-default"
+                                                            value="10">10
+                                                    </button>
                                                     <button type="button"
                                                             class="btn btn-default dropdown-toggle dropdown-icon"
                                                             data-toggle="dropdown">
@@ -81,7 +83,8 @@
                                         </thead>
 
                                         <tbody>
-                                        <c:forEach begin="0" step="1" end="10"  items="${employee}" var="employee" varStatus="loop">
+                                        <c:forEach begin="0" step="1" end="10" items="${employee}" var="employee"
+                                                   varStatus="loop">
 
                                             <tr>
 
@@ -98,16 +101,15 @@
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
                                                         </div>
                                                         <div class="col md-6">
-<%--                                                            <form method="get" action='<c:url value="/employees/delete/${employee.id}"/>'>--%>
-                                                            <a href="/employees/delete/${employee.id}" style="width: 45px"
-                                                                    class="btn btn-success bg-gradient-danger"
-                                                                    data-toggle="modal"
-                                                                    data-target="#delete-modal"
-                                                                    id="deleteButton"
+                                                            <a href="/employees/delete/${employee.id}"
+                                                               style="width: 45px"
+                                                               class="btn btn-success bg-gradient-danger"
+                                                               data-toggle="modal"
+                                                               data-target="#delete-modal"
+                                                               id="deleteButton"
                                                             ><i class="fas fa-trash-alt"></i>
 
                                                             </a>
-<%--                                                            </form>--%>
                                                         </div>
 
                                                     </div>
@@ -117,13 +119,14 @@
                                         </tbody>
 
                                     </table>
-                                            <!-- The Modal -->
+                                    <!-- The Modal -->
                                     <div class="modal fade" id="deleteModal">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title">Usuwanie pracownika</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
@@ -131,7 +134,9 @@
                                                     <p>Czy rzeczywiście chcesz usunąć pracownika?</p>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
-                                                    <button type="button" class="btn btn-success" data-dismiss="modal">zamknij</button>
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                                                        zamknij
+                                                    </button>
                                                     <a href="" class="btn btn-danger" id="delRef">Usuń</a>
                                                 </div>
                                             </div>
@@ -170,7 +175,7 @@
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
 <script>
-    $('.table #deleteButton').on('click', function(event){
+    $('.table #deleteButton').on('click', function (event) {
         event.preventDefault();
         const href = $(this).attr('href');
         $('#deleteModal #delRef').attr('href', href);

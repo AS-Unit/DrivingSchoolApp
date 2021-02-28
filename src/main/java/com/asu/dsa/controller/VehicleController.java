@@ -48,13 +48,13 @@ public class VehicleController {
 
     // save edited vehicle
     @PostMapping("/editVehicle/{id}")
-    public Vehicle saveEditedVehicle(@PathVariable Long id){
+    public Vehicle saveEditedVehicle(@PathVariable Long id) {
         return vehicleService.updateVehicle(id);
     }
 
     // delete existed vehicle
     @DeleteMapping("/{id}")
-    public Vehicle deleteVehicle (@PathVariable Long id) {
+    public Vehicle deleteVehicle(@PathVariable Long id) {
         return vehicleService.deleteVehicle(id);
     }
 

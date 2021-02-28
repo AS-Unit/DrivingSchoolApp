@@ -2,11 +2,14 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Classroom;
 import com.asu.dsa.service.ClassroomsService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/classrooms")
 public class ClassroomsController {
 
@@ -17,27 +20,39 @@ public class ClassroomsController {
     }
 
     @GetMapping
-    public List<Classroom> getAllClassrooms() {
-        return classroomsService.getAllClassrooms();
+    public String getAllClassrooms(Model model) {
+        List<Classroom> list = classroomsService.getAllClassrooms();
+        model.addAttribute("classroom", list);
+        return "views/classroom/classrooms";
+    }
+
+    @GetMapping("addNewClassroom")
+    public String viewNewClassroom() {
+        return "views/classroom/addNewClassroom";
+    }
+
+    @PostMapping("/addNewClassroom")
+    public RedirectView addClassroom(@ModelAttribute Classroom classroom) {
+        classroomsService.addClassroom(classroom);
+        return new RedirectView("/classrooms");
     }
 
     @GetMapping("editClassroom/{id}")
-    public Classroom getClassroomById(@PathVariable Long id) {
-        return classroomsService.getClassroomById(id);
+    public String getClassroomById(@PathVariable("id") Long id, Model model) {
+        Classroom classroom = classroomsService.getClassroomById(id);
+        model.addAttribute("classroom", classroom);
+        return "views/classroom/editClassroom";
     }
 
-    @PostMapping("/addClassroom")
-    public Classroom addClassroom(@RequestBody Classroom classroom) {
-        return classroomsService.addClassroom(classroom);
+    @PostMapping("/editClassroom/{id}")
+    public RedirectView updateClassroom(@ModelAttribute Classroom classroom) {
+        classroomsService.updateClassroom(classroom);
+        return new RedirectView("/classrooms");
     }
 
-    @PutMapping("/editClassroom/{id}")
-    public Classroom updateClassroom(@PathVariable Long id) {
-        return classroomsService.updateClassroom(id);
-    }
-
-    @DeleteMapping("/{id}")
-    public Classroom removeClassroom(@PathVariable Long id) {
-        return classroomsService.removeClassroom(id);
+    @GetMapping("delete/{id}")
+    public RedirectView removeClassroom(@PathVariable Long id) {
+        classroomsService.removeClassroom(id);
+        return new RedirectView("/classrooms");
     }
 }

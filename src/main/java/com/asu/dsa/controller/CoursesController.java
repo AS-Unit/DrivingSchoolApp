@@ -2,11 +2,14 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Course;
 import com.asu.dsa.service.CoursesService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/courses")
 public class CoursesController {
 
@@ -16,19 +19,33 @@ public class CoursesController {
         this.coursesService = coursesService;
     }
 
+    // get all courses list
     @GetMapping
-    public List<Course> getAllCourse() {
-        return coursesService.getAllCourses();
+    public String getAllCourse(Model model) {
+        List<Course> list = coursesService.getAllCourses();
+        model.addAttribute("course", list);
+        return "views/course/courses";
     }
 
+    // get course by id for edit
     @GetMapping("courses/{id}")
-    public Course getCourseById(@PathVariable Long id) {
-        return coursesService.getCourseById(id);
+    public String getCourseById(@PathVariable("id") Long id, Model model) {
+        Course course = coursesService.getCourseById(id);
+        model.addAttribute("course", course);
+        return "views/course/editCourse";
     }
 
-    @PostMapping("/addCourse")
-    public Course addCourse(@RequestBody Course course) {
-        return coursesService.addCourse(course);
+    // get view for add new course
+    @GetMapping("addNewCourse")
+    public String getViewForNewCorse() {
+        return "views/course/addNewCourse";
+    }
+
+    // save new course
+    @PostMapping("/addNewCourse")
+    public RedirectView addNewCourse(@ModelAttribute Course course) {
+        coursesService.addCourse(course);
+        return new RedirectView("/courses");
     }
 
     @PutMapping("editCourse/{id}")

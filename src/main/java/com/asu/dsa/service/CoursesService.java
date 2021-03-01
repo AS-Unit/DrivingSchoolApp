@@ -34,7 +34,7 @@ public class CoursesService {
 
     //add course
     public Course addCourse(Course course) {
-        course.setDateCreateCourse(LocalDate.now());
+        course.setDateCreate(LocalDate.now());
         return coursesRepository.save(course);
     }
 
@@ -44,7 +44,7 @@ public class CoursesService {
                 .orElseThrow(() -> {
                     throw new NoCourseFoundException(id);
                 });
-        course.setDateEditCourse(LocalDate.now());
+        course.setDateModify(LocalDate.now());
         return coursesRepository.save(course);
     }
 

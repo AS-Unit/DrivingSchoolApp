@@ -48,12 +48,6 @@ public class StudentController {
         return new RedirectView("/students");
     }
 
-    // get view for edit existed student
-/*    @GetMapping("/editStudent/{id}")
-    public String getViewForEditStudent() {
-        return "view/students/editStudent";
-    }*/
-
     // save edited student
     @PostMapping("/editStudent/{id}")
     public RedirectView saveEditedStudent(@ModelAttribute Student student) {
@@ -62,10 +56,10 @@ public class StudentController {
     }
 
     // remove existed student
-    @DeleteMapping("/{id}")
-    public Student deleteStudent(@PathVariable Long id) {
-        return studentService.deleteStudent(id);
+    @GetMapping("delete/{id}")
+    public RedirectView deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return new RedirectView("/students/");
     }
-
 
 }

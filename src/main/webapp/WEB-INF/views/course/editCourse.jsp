@@ -32,7 +32,7 @@
         </div>
         <!-- /.content-header -->
 
-        <form method="post" action='<c:url value="/courses/addNewCourse"/>'>
+        <form name="updateEditCourse" method="post" action='<c:url value="/courses/editCourse/${course.id}"/>'>
 
             <!-- Main content -->
             <div class="card-body">
@@ -48,7 +48,8 @@
                                         <input type="text"
                                                class="form-control datetimepicker-input"
                                                data-target="#dateStartCourse"
-                                               name="dateStartCourse"/>
+                                               name="dateStartCourse"
+                                               value="${course.dateStartCourse}"/>
                                         <div class="input-group-append"
                                              data-target="#dateStartCoourse"
                                              data-toggle="datetimepicker">
@@ -71,7 +72,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="type" name="type">
+                                        <select class="form-control" id="type" name="type" value="${course.type}">
                                             <option>teoria</option>
                                             <option>praktyka</option>
                                             <option>szkolenie z pierwszej pomocy</option>
@@ -93,7 +94,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="place" name="place">
+                                        <select class="form-control" id="place" name="place" valeu="${course.place}">
                                             <option>sala 1</option>
                                             <option>sala 2</option>
                                             <option>sala 3</option>
@@ -115,7 +116,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="lecturer" name="lecturer">
+                                        <select class="form-control" id="lecturer" name="lecturer" value="${course.lecturer}">
                                             <option>Jan Kowalski</option>
                                             <option>Jerzy Brzęczek</option>
                                             <option>Wojciech Niemocny</option>
@@ -139,6 +140,7 @@
                                     <input type="text" class="form-control"
                                            id="maxCountOfStudents"
                                            name="maxCountOfStudents"
+                                           value="${course.maxCountOfStudents}"
                                            placeholder="">
                                 </div>
                             </div>

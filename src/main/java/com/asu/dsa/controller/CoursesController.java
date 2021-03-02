@@ -48,13 +48,17 @@ public class CoursesController {
         return new RedirectView("/courses");
     }
 
-    @PutMapping("editCourse/{id}")
-    public Course updateCourse(@PathVariable Long id) {
-        return coursesService.updateCourse(id);
+    // save edited course
+    @PostMapping("editCourse/{id}")
+    public RedirectView updateCourse(@ModelAttribute Course course) {
+        coursesService.updateCourse(course);
+        return new RedirectView("/courses");
     }
 
-    @DeleteMapping("/{id}")
-    public Course removeCourse(@PathVariable Long id) {
-        return coursesService.removeCourse(id);
+    // delete existed course
+    @GetMapping("delete/{id}")
+    public RedirectView removeCourse(@PathVariable Long id) {
+        coursesService.removeCourse(id);
+        return new RedirectView("/courses");
     }
 }

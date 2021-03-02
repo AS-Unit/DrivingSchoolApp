@@ -24,7 +24,9 @@ public class Course {
     private int maxCountOfStudents;
     private String note;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateCreate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateModify;
 
     public Course() {

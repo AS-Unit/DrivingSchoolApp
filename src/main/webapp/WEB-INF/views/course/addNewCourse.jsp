@@ -44,13 +44,15 @@
                                     <p>Data rozpoczęcia zajęć:</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="input-group date" id="beginDate" data-target-input="nearest">
+                                    <div class="input-group date"
+                                         id="startCourseDate"
+                                         data-target-input="nearest">
                                         <input type="text"
-                                               class="form-control datetimepicker-input"
-                                               data-target="#dateStartCourse"
-                                               name="dateStartCourse"/>
+                                               class="form-control datetimepicker"
+                                               data-target="#startCourseDate"
+                                               name="startCourseDate">
                                         <div class="input-group-append"
-                                             data-target="#dateStartCoourse"
+                                             data-target="#startCourseDate"
                                              data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
@@ -72,8 +74,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" id="type" name="type">
-                                            <option>teoria</option>
-                                            <option>praktyka</option>
+                                            <option>wieczorowy</option>
+                                            <option>weekendowy</option>
+                                            <option>online</option>
                                             <option>szkolenie z pierwszej pomocy</option>
                                         </select>
                                     </div>
@@ -152,18 +155,21 @@
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-9">
-
-                        </div>
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <a href="/courses" type="button" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href="/employees" type="button" class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-md-3">
+                            Data utworzenia recordu
+                        </div>
+                        <div class="col-md-3">
+                            Data Ostatniej Modyfikacji
                         </div>
                     </div>
                 </div>

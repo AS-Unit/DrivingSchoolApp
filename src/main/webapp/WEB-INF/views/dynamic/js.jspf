@@ -92,7 +92,7 @@
         )
 
         //Timepicker
-        $('#reservationdate,#permissionExpirationDate,#drivingLicenseExpirationDate,#dateEdit,#dateCreate,#dateCreateEmployee,#dateEditEmployee').datetimepicker({
+        $('#reservationdate,#permissionExpirationDate,#drivingLicenseExpirationDate,#dateEdit,#dateCreate,#dateCreateEmployee,#dateEditEmployee, #startCourseDate').datetimepicker({
             format: 'YYYY-MM-DD'
         });
 

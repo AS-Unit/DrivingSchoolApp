@@ -18,7 +18,7 @@ public class Course {
     private String category;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateStartCourse;
+    private LocalDate startCourseDate;
     private String lecturer;
     private String place;
     private int maxCountOfStudents;
@@ -32,11 +32,11 @@ public class Course {
     public Course() {
     }
 
-    public Course(Long id, String type, String category, LocalDate dateStartCourse, String lecturer, String place, int maxCountOfStudents, String note, LocalDate dateCreate, LocalDate dateModify) {
+    public Course(Long id, String type, String category, LocalDate startCourseDate, String lecturer, String place, int maxCountOfStudents, String note, LocalDate dateCreate, LocalDate dateModify) {
         this.id = id;
         this.type = type;
         this.category = category;
-        this.dateStartCourse = dateStartCourse;
+        this.startCourseDate = startCourseDate;
         this.lecturer = lecturer;
         this.place = place;
         this.maxCountOfStudents = maxCountOfStudents;
@@ -69,12 +69,12 @@ public class Course {
         this.category = category;
     }
 
-    public LocalDate getDateStartCourse() {
-        return dateStartCourse;
+    public LocalDate getStartCourseDate() {
+        return startCourseDate;
     }
 
-    public void setDateStartCourse(LocalDate dateStartCourse) {
-        this.dateStartCourse = dateStartCourse;
+    public void setStartCourseDate(LocalDate dateStartCourse) {
+        this.startCourseDate = dateStartCourse;
     }
 
     public String getLecturer() {

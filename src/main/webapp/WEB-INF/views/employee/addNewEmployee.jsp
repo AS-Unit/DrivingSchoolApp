@@ -366,7 +366,8 @@
                                     <p>Ważne do</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="input-group date" id="drivingLicenseExpirationDate"
+                                    <div class="input-group date"
+                                         id="drivingLicenseExpirationDate"
                                          data-target-input="nearest">
                                         <input type="text" class="form-control datetimepicker"
                                                data-target="#drivingLicenseExpirationDate"
@@ -401,7 +402,7 @@
 
                         </div>
 
-                        <div class="col-md-3">git
+                        <div class="col-md-3">
                             Data utworzenia recordu
                         </div>
 

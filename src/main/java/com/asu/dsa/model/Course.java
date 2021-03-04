@@ -10,30 +10,39 @@ import java.time.LocalDate;
 
 @Entity
 public class Course {
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    LocalDate dateCreateCourse;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    LocalDate dateEditCourse;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String type;
+    private String category;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateStartCourse;
+    private LocalDate startCourseDate;
     private String lecturer;
-    private String placeCourse;
+    private String place;
     private int maxCountOfStudents;
+    private String note;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateCreate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dateModify;
 
     public Course() {
     }
 
-    public Course(Long id, LocalDate dateStartCourse, String lecturer, String placeCourse, int maxCountOfStudents, LocalDate dateCreateCourse, LocalDate dateEditCourse) {
+    public Course(Long id, String type, String category, LocalDate startCourseDate, String lecturer, String place, int maxCountOfStudents, String note, LocalDate dateCreate, LocalDate dateModify) {
         this.id = id;
-        this.dateStartCourse = dateStartCourse;
+        this.type = type;
+        this.category = category;
+        this.startCourseDate = startCourseDate;
         this.lecturer = lecturer;
-        this.placeCourse = placeCourse;
+        this.place = place;
         this.maxCountOfStudents = maxCountOfStudents;
-        this.dateCreateCourse = dateCreateCourse;
-        this.dateEditCourse = dateEditCourse;
+        this.note = note;
+        this.dateCreate = dateCreate;
+        this.dateModify = dateModify;
     }
 
     public Long getId() {
@@ -44,12 +53,28 @@ public class Course {
         this.id = id;
     }
 
-    public LocalDate getDateStartCourse() {
-        return dateStartCourse;
+    public String getType() {
+        return type;
     }
 
-    public void setDateStartCourse(LocalDate dateStartCourse) {
-        this.dateStartCourse = dateStartCourse;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public LocalDate getStartCourseDate() {
+        return startCourseDate;
+    }
+
+    public void setStartCourseDate(LocalDate dateStartCourse) {
+        this.startCourseDate = dateStartCourse;
     }
 
     public String getLecturer() {
@@ -60,12 +85,12 @@ public class Course {
         this.lecturer = lecturer;
     }
 
-    public String getPlaceCourse() {
-        return placeCourse;
+    public String getPlace() {
+        return place;
     }
 
-    public void setPlaceCourse(String placeCourse) {
-        this.placeCourse = placeCourse;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public int getMaxCountOfStudents() {
@@ -76,19 +101,27 @@ public class Course {
         this.maxCountOfStudents = maxCountOfStudents;
     }
 
-    public LocalDate getDateCreateCourse() {
-        return dateCreateCourse;
+    public String getNote() {
+        return note;
     }
 
-    public void setDateCreateCourse(LocalDate dateCreateCourse) {
-        this.dateCreateCourse = dateCreateCourse;
+    public void setNote(String note) {
+        this.note = note;
     }
 
-    public LocalDate getDateEditCourse() {
-        return dateEditCourse;
+    public LocalDate getDateCreate() {
+        return dateCreate;
     }
 
-    public void setDateEditCourse(LocalDate dateEditCourse) {
-        this.dateEditCourse = dateEditCourse;
+    public void setDateCreate(LocalDate dateCreate) {
+        this.dateCreate = dateCreate;
+    }
+
+    public LocalDate getDateModify() {
+        return dateModify;
+    }
+
+    public void setDateModify(LocalDate dateModify) {
+        this.dateModify = dateModify;
     }
 }

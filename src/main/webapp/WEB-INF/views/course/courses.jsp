@@ -91,7 +91,7 @@
                                                 <td>${course.lecturer}</td>
                                                 <td>
                                                     <!--edit buton -->
-                                                    <a href='<c:url value="/courses/courses/${course.id}"/>'
+                                                    <a href='<c:url value="/courses/editCourse/${course.id}"/>'
                                                        class="btn btn-success bg-gradient-success"
                                                        style="width: 50px"><i class="fas fa-edit"></i></a>
                                                     <!-- delete buton -->

@@ -14,21 +14,21 @@
     <!-- Main Sidebar Container -->
     <%@include file="/WEB-INF/views/dynamic/mainSidebar.jspf" %>
     <!--/.main sidebar -->
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
 
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card card-danger">
+                        <div class="card card-warning">
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h4><i class="nav-icon fas fa-book"></i>
-                                            Kursy</h4>
+                                        <h4><i class="nav-icon fas fa-car"></i>
+                                            Pojazdy</h4>
                                     </div>
                                 </div>
                             </div>
@@ -39,8 +39,8 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="courses/addNewCourse"/>' type="button"
-                                               class="btn btn-block btn-success btn-lg">Dodaj kurs <i
+                                            <a href='<c:url value="/vehicles/addNewVehicle"/>' type="button"
+                                               class="btn btn-block btn-primary btn-lg">Dodaj pojazd <i
                                                     class="nav-icon fas fa-plus"></i></a>
                                         </div>
                                     </div>
@@ -63,6 +63,7 @@
                                                 </div>
                                                 pozycji
                                             </h5>
+
                                         </div>
                                     </div>
                                 </div>
@@ -71,38 +72,37 @@
                                         <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>
-                                            <th>Rodzaj</th>
-                                            <th>Miejsce</th>
-                                            <th>Data rozpoczęcia</th>
-                                            <th>Ilość miejsc</th>
-                                            <th>Prowadzący</th>
+                                            <th>Marka</th>
+                                            <th>Model</th>
+                                            <th>Nr rejestracyjny</th>
+                                            <th>Status</th>
+                                            <th>Użytkownik</th>
                                             <th style="width: 130px"></th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach begin="0" step="1" end="10" items="${course}" var="course"
+                                        <c:forEach begin="0" step="1" end="10" items="${vehicle}" var="vehicle"
                                                    varStatus="loop">
                                             <tr>
                                                 <td>${loop.count}</td>
-                                                <td>${course.type}</td>
-                                                <td>${course.place}</td>
-                                                <td>${course.startCourseDate}</td>
-                                                <td>${course.maxCountOfStudents}</td>
-                                                <td>${course.lecturer}</td>
+                                                <td>${vehicle.brand}</td>
+                                                <td>${vehicle.model}</td>
+                                                <td>${vehicle.registrationNo}</td>
+                                                <td>${vehicle.status}</td>
+                                                <td>${vehicle.driver}</td>
                                                 <td>
                                                     <!--edit buton -->
-                                                    <a href='<c:url value="/courses/editCourse/${course.id}"/>'
-                                                       class="btn btn-success bg-gradient-success"
+                                                    <a href='<c:url value="/vehicles/editVehicle/${vehicle.id}"/>'
+                                                       class="btn btn-success bg-gradient-primary"
                                                        style="width: 50px"><i class="fas fa-edit"></i></a>
                                                     <!-- delete buton -->
-                                                    <a href="courses/delete/${course.id}"
+                                                    <a href="/vehicles/delete/${vehicle.id}"
                                                        class="btn btn-success bg-gradient-danger"
                                                        style="width: 45px"
                                                        data-toggle="modal"
                                                        data-target="#deleteModal"
                                                        id="deleteButton">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </a>
+                                                    <i class="fas fa-trash-alt"></i></a>
                                                 </td>
                                             </tr>
                                         </c:forEach>
@@ -114,14 +114,14 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">Usuwanie kursu</h4>
+                                                    <h4 class="modal-title">Usuwanie pojazdu</h4>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Czy rzeczywiście chcesz usunąć kurs?</p>
+                                                    <p>Czy rzeczywiście chcesz usunąć pojazd?</p>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
                                                     <button type="button" class="btn btn-success" data-dismiss="modal">
@@ -147,19 +147,18 @@
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
-
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- /.content -->
     </div>
     <!--    footer    -->
     <%@include file="/WEB-INF/views/dynamic/footer.jspf" %>
     <!--    /.footer    -->
+    <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 

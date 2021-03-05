@@ -2,11 +2,15 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Vehicle;
 import com.asu.dsa.service.VehicleService;
+import org.springframework.format.datetime.joda.ReadableInstantPrinter;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/vehicles")
 public class VehicleController {
 
@@ -18,44 +22,45 @@ public class VehicleController {
 
     // get all vehicles list
     @GetMapping
-    public List<Vehicle> getAllVehicles() {
-        return vehicleService.getAllVehicles();
+    public String getAllVehicles(Model model) {
+        List<Vehicle> list = vehicleService.getAllVehicles();
+        model.addAttribute("vehicle", list);
+        return "/views/vehicle/vehicles";
     }
 
     // get view for new vehicle
-    @GetMapping("/editVehicle")
+    @GetMapping("/addNewVehicle")
     public String getViewForNewVehicle() {
-        return "view/vehicles/addNewVehicle";
-    }
-
-    // save new vehicle
-    @PostMapping
-    public Vehicle addNewVehicle(@RequestBody Vehicle vehicle) {
-        return vehicleService.addNewVehicle(vehicle);
+        return "views/vehicle/addNewVehicle";
     }
 
     // get vehicle by id for edit
     @GetMapping("/editVehicle/{id}")
-    public Vehicle getVehicleById(@PathVariable Long id) {
-        return vehicleService.getVehicleById(id);
+    public String getVehicleById(@PathVariable Long id, Model model) {
+        Vehicle vehicle = vehicleService.getVehicleById(id);
+        model.addAttribute("vehicle", vehicle);
+        return "views/vehicle/editVehicle";
     }
 
-/*    // get view for edit existed vehicle
-    @GetMapping("/editVehicle/{id}")
-    public String getViewForEditVehicle() {
-        return "view/vehicle/editVehicle";
-    }*/
+    // save new vehicle
+    @PostMapping("addNewVehicle")
+    public RedirectView addNewVehicle(@ModelAttribute Vehicle vehicle) {
+        vehicleService.addNewVehicle(vehicle);
+        return new RedirectView("/vehicles");
+    }
 
     // save edited vehicle
     @PostMapping("/editVehicle/{id}")
-    public Vehicle saveEditedVehicle(@PathVariable Long id) {
-        return vehicleService.updateVehicle(id);
+    public RedirectView saveEditedVehicle(@ModelAttribute Vehicle vehicle) {
+        vehicleService.updateVehicle(vehicle);
+        return new RedirectView("/vehicles");
     }
 
     // delete existed vehicle
-    @DeleteMapping("/{id}")
-    public Vehicle deleteVehicle(@PathVariable Long id) {
-        return vehicleService.deleteVehicle(id);
+    @GetMapping("delete/{id}")
+    public RedirectView deleteVehicle(@PathVariable Long id) {
+        vehicleService.deleteVehicle(id);
+        return new RedirectView("/vehicles");
     }
 
 }

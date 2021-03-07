@@ -28,8 +28,8 @@ public class CoursesService {
     // get course by id
     public Course getCourseById(Long id) {
         return coursesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoCourseFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoCourseFoundException(id);
                 });
     }
 
@@ -48,8 +48,8 @@ public class CoursesService {
     // delete course
     public Course removeCourse(Long id) {
         Course course = coursesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoCourseFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoCourseFoundException(id);
                 });
         coursesRepository.delete(course);
         return course;

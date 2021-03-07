@@ -31,8 +31,8 @@ public class EmployeesService {
 
     public Employee getEmployeeById(Long id) {
         return employeesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoEmployeeFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoEmployeeFoundException(id);
                 });
     }
 
@@ -54,8 +54,8 @@ public class EmployeesService {
 
     public void removeEmployee(Long id) {
         Employee employee = employeesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoEmployeeFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoEmployeeFoundException(id);
                 });
         employeesRepository.delete(employee);
     }

@@ -28,8 +28,8 @@ public class StudentService {
     // get student by id
     public Student getStudentById(Long id) {
         return studentRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoStudentFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoStudentFoundException(id);
                 });
     }
 
@@ -47,8 +47,8 @@ public class StudentService {
     // delete student
     public Student deleteStudent(Long id) {
         Student studentToDelete = studentRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoStudentFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoStudentFoundException(id);
                 });
         studentRepository.delete(studentToDelete);
         return studentToDelete;

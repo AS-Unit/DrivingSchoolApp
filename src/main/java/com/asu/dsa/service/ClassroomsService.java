@@ -28,8 +28,8 @@ public class ClassroomsService {
     //get classroom by id
     public Classroom getClassroomById(Long id) {
         return classroomsRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoClassroomFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoClassroomFoundException(id);
                 });
     }
     //add classroom
@@ -48,8 +48,8 @@ public class ClassroomsService {
     // delete classroom
     public void removeClassroom(Long id) {
         Classroom classroom = classroomsRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoClassroomFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoClassroomFoundException(id);
                 });
         classroomsRepository.delete(classroom);
     }

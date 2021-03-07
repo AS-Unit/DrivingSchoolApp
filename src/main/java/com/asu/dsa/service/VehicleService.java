@@ -29,8 +29,8 @@ public class VehicleService {
     // get vehicle by id
     public Vehicle getVehicleById(Long id) {
         return vehicleRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoVehicleFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoVehicleFoundException(id);
                 });
     }
 
@@ -50,8 +50,8 @@ public class VehicleService {
     // delete vehicle
     public Vehicle deleteVehicle(Long id) {
         Vehicle vehicleToDelete = vehicleRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new <NoSuchElementException>NoVehicleFoundException(id);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoVehicleFoundException(id);
                 });
         vehicleRepository.delete(vehicleToDelete);
         return vehicleToDelete;

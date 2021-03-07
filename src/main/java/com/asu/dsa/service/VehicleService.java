@@ -6,6 +6,7 @@ import com.asu.dsa.service.exception.NoVehicleFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -23,10 +24,6 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
-    // add new vehicle
-    public Vehicle addNewVehicle(Vehicle vehicle) {
-        return vehicleRepository.save(vehicle);
-    }
 
     // get vehicle by id
     public Vehicle getVehicleById(Long id) {
@@ -36,14 +33,17 @@ public class VehicleService {
                 });
     }
 
+    // add new vehicle
+    public Vehicle addNewVehicle(Vehicle vehicle) {
+        vehicle.setDateCreate(LocalDate.now());
+        return vehicleRepository.save(vehicle);
+    }
+
 
     // update vehicle
-    public Vehicle updateVehicle(Long id) {
-        Vehicle vehicleToUpdate = vehicleRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new NoVehicleFoundException(id);
-                });
-        return vehicleRepository.save(vehicleToUpdate);
+    public Vehicle updateVehicle(Vehicle vehicle) {
+        vehicle.setDateModify(LocalDate.now());
+        return vehicleRepository.save(vehicle);
     }
 
     // delete vehicle

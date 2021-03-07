@@ -19,12 +19,12 @@ public class CoursesService {
         this.coursesRepository = coursesRepository;
     }
 
-    //get all course
+    // get all course
     public List<Course> getAllCourses() {
         return coursesRepository.findAll();
     }
 
-    //get course by id
+    // get course by id
     public Course getCourseById(Long id) {
         return coursesRepository.findById(id)
                 .orElseThrow(() -> {
@@ -32,23 +32,19 @@ public class CoursesService {
                 });
     }
 
-    //add course
+    // add course
     public Course addCourse(Course course) {
-        course.setDateCreateCourse(LocalDate.now());
+        course.setDateCreate(LocalDate.now());
         return coursesRepository.save(course);
     }
 
-    //update course
-    public Course updateCourse(Long id) {
-        Course course = coursesRepository.findById(id)
-                .orElseThrow(() -> {
-                    throw new NoCourseFoundException(id);
-                });
-        course.setDateEditCourse(LocalDate.now());
+    // update course
+    public Course updateCourse(Course course) {
+        //course.setDateModify(LocalDate.now());
         return coursesRepository.save(course);
     }
 
-    //delete course
+    // delete course
     public Course removeCourse(Long id) {
         Course course = coursesRepository.findById(id)
                 .orElseThrow(() -> {

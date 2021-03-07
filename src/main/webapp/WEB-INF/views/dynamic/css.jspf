@@ -12,8 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link href='<c:url value="/resources/plugins/fontawesome-free/css/all.min.css"/>' rel="stylesheet">
+
     <!-- Ionicons -->
     <link href='<c:url value="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>' rel="stylesheet">
+    <link href='<c:url value="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>' rel="stylesheet">
     <!-- Tempusdominus Bbootstrap 4 -->
     <link href='<c:url value="/resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>'
           rel="stylesheet">

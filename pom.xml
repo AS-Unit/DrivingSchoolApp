@@ -11,7 +11,6 @@
 	<groupId>com.asu</groupId>
 	<artifactId>dsa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>dsa</name>
 	<description>Driving School Application</description>
 	<properties>

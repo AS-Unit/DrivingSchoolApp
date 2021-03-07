@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class StudentService {
@@ -28,7 +29,7 @@ public class StudentService {
     public Student getStudentById(Long id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> {
-                    throw new NoStudentFoundException(id);
+                    throw new <NoSuchElementException>NoStudentFoundException(id);
                 });
     }
 
@@ -47,7 +48,7 @@ public class StudentService {
     public Student deleteStudent(Long id) {
         Student studentToDelete = studentRepository.findById(id)
                 .orElseThrow(() -> {
-                    throw new NoStudentFoundException(id);
+                    throw new <NoSuchElementException>NoStudentFoundException(id);
                 });
         studentRepository.delete(studentToDelete);
         return studentToDelete;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class VehicleService {
@@ -29,7 +30,7 @@ public class VehicleService {
     public Vehicle getVehicleById(Long id) {
         return vehicleRepository.findById(id)
                 .orElseThrow(() -> {
-                    throw new NoVehicleFoundException(id);
+                    throw new <NoSuchElementException>NoVehicleFoundException(id);
                 });
     }
 
@@ -50,7 +51,7 @@ public class VehicleService {
     public Vehicle deleteVehicle(Long id) {
         Vehicle vehicleToDelete = vehicleRepository.findById(id)
                 .orElseThrow(() -> {
-                    throw new NoVehicleFoundException(id);
+                    throw new <NoSuchElementException>NoVehicleFoundException(id);
                 });
         vehicleRepository.delete(vehicleToDelete);
         return vehicleToDelete;

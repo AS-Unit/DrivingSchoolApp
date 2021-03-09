@@ -38,6 +38,4 @@ public class Vehicle {
     private LocalDate dateCreate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateModify;
-
-
 }

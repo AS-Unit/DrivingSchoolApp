@@ -41,7 +41,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="/classrooms/addNewClassroom"/>' type="button"
+                                            <a href='<c:url value="/classrooms/addNewClassroom"/>'
                                                class="btn btn-block btn-primary btn-lg">Dodaj
                                                 salę <i class="nav-icon fas fa-plus"></i></a>
                                         </div>

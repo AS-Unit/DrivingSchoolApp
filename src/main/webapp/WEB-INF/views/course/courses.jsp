@@ -39,7 +39,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="courses/addNewCourse"/>' type="button"
+                                            <a href='<c:url value="courses/addNewCourse"/>'
                                                class="btn btn-block btn-success btn-lg">Dodaj kurs <i
                                                     class="nav-icon fas fa-plus"></i></a>
                                         </div>

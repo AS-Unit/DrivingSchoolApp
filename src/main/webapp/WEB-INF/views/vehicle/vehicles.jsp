@@ -39,7 +39,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="/vehicles/addNewVehicle"/>' type="button"
+                                            <a href='<c:url value="/vehicles/addNewVehicle"/>'
                                                class="btn btn-block btn-primary btn-lg">Dodaj pojazd <i
                                                     class="nav-icon fas fa-plus"></i></a>
                                         </div>

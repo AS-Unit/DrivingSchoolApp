@@ -158,7 +158,7 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <a href="/courses" type="button" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href="/courses" class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">

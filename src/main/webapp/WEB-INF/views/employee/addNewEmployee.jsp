@@ -392,7 +392,7 @@
                             <div class="row">
 
                                 <div class="col-sm-4">
-                                    <a href="/employees" type="button" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href="/employees" class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">

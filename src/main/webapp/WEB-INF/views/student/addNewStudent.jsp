@@ -277,25 +277,25 @@
             </div>
         </div>
 
-        <div class="card-body">
-            <div class="container-fluid">
-                <div class="row">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="row">
 
-                    <div class="col-md-3">
-                        <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
 
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-block btn-danger">Anuluj</button>
+                                <div class="col-sm-4">
+                                    <a href="/students" class="btn btn-block btn-danger">Anuluj</a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-block btn-success" value="Zapisz">
+                                </div>
                             </div>
-                            <div class="col-sm-4">
-                                <input type="submit" class="btn btn-block btn-success" value="Zapisz">
-                            </div>
+
+
                         </div>
 
-
-                    </div>
-
-                    <div class="col-md-3">
+                        <div class="col-md-3">
                         Data utworzenia recordu
                     </div>
 

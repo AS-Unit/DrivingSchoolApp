@@ -30,20 +30,9 @@ public class Employee {
     private String isParamedic;
 
     private String isLecturerA;
-    private String isLecturerA1;
-    private String isLecturerA2;
-    private String isLecturerAm;
     private String isLecturerB;
-    private String isLecturerB1;
-    private String isLecturerBe;
     private String isLecturerC;
-    private String isLecturerC1;
-    private String isLecturerCe;
-    private String isLecturerC1e;
     private String isLecturerD;
-    private String isLecturerD1;
-    private String isLecturerDe;
-    private String isLecturerD1e;
     private String isLecturerT;
 
     private String noPermission;

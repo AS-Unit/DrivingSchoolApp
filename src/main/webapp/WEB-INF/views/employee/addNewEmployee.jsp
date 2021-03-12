@@ -177,119 +177,33 @@
                                                 <div class="col-sm-2">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerA1" name="isLecturerA1" value="true">
-                                                        <label for="isLecturerA1" class="form-check-label">A1</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerA2" name="isLecturerA2" value="true">
-                                                        <label for="isLecturerA2" class="form-check-label">A2</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerAm" name="isLecturerAm" value="true">
-                                                        <label for="isLecturerAm" class="form-check-label">AM</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="isLecturerB"
-                                                               name="isLecturerB" value="true">
+                                                               id="isLecturerB" name="isLecturerB" value="true">
                                                         <label for="isLecturerB" class="form-check-label">B</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerB1" name="isLecturerB1" value="true">
-                                                        <label for="isLecturerB1" class="form-check-label">B1</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerBe" name="isLecturerBe" value="true">
-                                                        <label for="isLecturerBe" class="form-check-label">BE</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="isLecturerC"
-                                                               name="isLecturerC" value="true">
+                                                               id="isLecturerC" name="isLecturerC" value="true">
                                                         <label for="isLecturerC" class="form-check-label">C</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerC1" name="isLecturerC1" value="true">
-                                                        <label for="isLecturerC1" class="form-check-label">C1</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerCe" name="isLecturerCe" value="true">
-                                                        <label for="isLecturerCe" class="form-check-label">CE</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerC1e" name="isLecturerC1e" value="true">
-                                                        <label for="isLecturerC1e" class="form-check-label">C1E</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="isLecturerD"
-                                                               name="isLecturerD" value="true">
+                                                               id="isLecturerD" name="isLecturerD" value="true">
                                                         <label for="isLecturerD" class="form-check-label">D</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerD1" name="isLecturerD1" value="true">
-                                                        <label for="isLecturerD1" class="form-check-label">D1</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerDe" name="isLecturerDe" value="true">
-                                                        <label for="isLecturerDe" class="form-check-label">DE</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox"
-                                                               id="isLecturerD1e" name="isLEcturerD1e" value="true">
-                                                        <label for="isLecturerD1e" class="form-check-label">D1E</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="isLecturerT"
-                                                               name="isLecturerT" value="true">
+                                                               id="isLecturerT" name="isLecturerT" value="true">
                                                         <label for="isLecturerT" class="form-check-label">T</label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

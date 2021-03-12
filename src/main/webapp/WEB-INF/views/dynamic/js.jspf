@@ -112,5 +112,13 @@
             $(this).bootstrapSwitch('state', $(this).prop('checked'));
         });
 
+        //    function to delete modal
+        $('.table #deleteButton').on('click', function (event) {
+            event.preventDefault();
+            const href = $(this).attr('href');
+            $('#deleteModal #delRef').attr('href', href);
+            $('#deleteModal').modal();
+        });
+
     })
 </script>

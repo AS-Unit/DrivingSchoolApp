@@ -164,13 +164,5 @@
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
 
-<script>
-    $('.table #deleteButton').on('click', function (event) {
-        event.preventDefault();
-        const href = $(this).attr('href');
-        $('#deleteModal #delRef').attr('href', href);
-        $('#deleteModal').modal();
-    });
-</script>
 </body>
 </html>

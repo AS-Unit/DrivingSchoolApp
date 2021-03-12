@@ -3,7 +3,7 @@
 <html lang="pl">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,5 +35,6 @@
     <link href='<c:url value="/resources/plugins/summernote/summernote-bs4.css"/>' rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link href='<c:url value="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" />'
-          rel="stylesheet">
+          rel="stylesheet" type="text/css">
+    <link href='<c:url value="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>' rel="stylesheet">
 </head>

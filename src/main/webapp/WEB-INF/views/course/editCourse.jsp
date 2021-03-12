@@ -119,7 +119,8 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="lecturer" name="lecturer" value="${course.lecturer}">
+                                        <select class="form-control" id="lecturer" name="lecturer">
+                                            <option>${course.lecturer}</option>
                                             <option>Jan Kowalski</option>
                                             <option>Jerzy Brzęczek</option>
                                             <option>Wojciech Niemocny</option>

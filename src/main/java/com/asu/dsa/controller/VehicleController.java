@@ -2,7 +2,6 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Vehicle;
 import com.asu.dsa.service.VehicleService;
-import org.springframework.format.datetime.joda.ReadableInstantPrinter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -56,7 +55,7 @@ public class VehicleController {
         return new RedirectView("/vehicles");
     }
 
-    // delete existed vehicle
+    // remove existed vehicle
     @GetMapping("delete/{id}")
     public RedirectView deleteVehicle(@PathVariable Long id) {
         vehicleService.deleteVehicle(id);

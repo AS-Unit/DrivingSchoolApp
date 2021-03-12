@@ -20,6 +20,7 @@ public class EmployeesController {
         this.employeesService = employeesService;
     }
 
+    // get all employees list
     @GetMapping
     public String getAllEmployees(Model model) {
         List<Employee> list = employeesService.getAllEmployee();
@@ -27,17 +28,20 @@ public class EmployeesController {
         return "views/employee/employees";
     }
 
+    // get view for add new employee
     @GetMapping("/addNewEmployee")
     public String viewNewEmployee() {
         return "views/employee/addNewEmployee";
     }
 
+    // save the new employee
     @PostMapping("/addNewEmployee")
     public RedirectView addEmployee(@ModelAttribute Employee employee) {
         employeesService.addEmployee(employee);
         return new RedirectView("/employees");
     }
 
+    // get employee by id for edit
     @GetMapping("editEmployee/{id}")
     public String getEmployeeById(@PathVariable("id") Long id, Model model) {
         Employee employee = employeesService.getEmployeeById(id);
@@ -45,6 +49,7 @@ public class EmployeesController {
         return "views/employee/editEmployee";
     }
 
+    // save edited employee
     @PostMapping("/editEmployee/{id}")
     public RedirectView updateEmployee(@ModelAttribute Employee employee) {
         employeesService.updateEmployee(employee);

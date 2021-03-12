@@ -46,7 +46,7 @@ public class EmployeesService {
     // update employee
 
     public Employee updateEmployee(Employee newEmploye) {
-        newEmploye.setDateEditEmployee(LocalDate.now());
+        newEmploye.setDateModifyEmployee(LocalDate.now());
         return employeesRepository.save(newEmploye);
     }
 

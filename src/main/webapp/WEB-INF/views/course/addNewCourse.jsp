@@ -138,8 +138,8 @@
                                 <div class="col-sm-4">
                                     <p>Maksymalna ilość uczestnikow:</p>
                                 </div>
-                                <div class="col-sm-1">
-                                    <input type="text" class="form-control"
+                                <div class="col-sm-2">
+                                    <input type="number" class="form-control"
                                            id="maxCountOfStudents"
                                            name="maxCountOfStudents"
                                            placeholder="">

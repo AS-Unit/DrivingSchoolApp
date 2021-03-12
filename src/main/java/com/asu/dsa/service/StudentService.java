@@ -41,6 +41,7 @@ public class StudentService {
 
     // update student
     public Student updateStudent(Student student) {
+        student.setDateModifyStudent(LocalDate.now());
         return studentRepository.save(student);
     }
 

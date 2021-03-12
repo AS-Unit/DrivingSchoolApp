@@ -36,14 +36,14 @@ public class VehicleService {
 
     // add new vehicle
     public Vehicle addNewVehicle(Vehicle vehicle) {
-        vehicle.setDateCreate(LocalDate.now());
+        vehicle.setDateCreateVehicle(LocalDate.now());
         return vehicleRepository.save(vehicle);
     }
 
 
     // update vehicle
     public Vehicle updateVehicle(Vehicle vehicle) {
-        vehicle.setDateModify(LocalDate.now());
+        vehicle.setDateModifyVehicle(LocalDate.now());
         return vehicleRepository.save(vehicle);
     }
 

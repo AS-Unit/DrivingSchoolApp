@@ -31,8 +31,8 @@ public class Course {
     private String note;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateCreate;
+    private LocalDate dateCreateCourse;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateModify;
+    private LocalDate dateModifyCourse;
 
 }

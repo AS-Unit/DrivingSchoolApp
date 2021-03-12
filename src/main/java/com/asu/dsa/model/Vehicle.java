@@ -35,7 +35,7 @@ public class Vehicle {
     private String driver;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateCreate;
+    private LocalDate dateCreateVehicle;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateModify;
+    private LocalDate dateModifyVehicle;
 }

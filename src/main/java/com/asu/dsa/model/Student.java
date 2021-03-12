@@ -3,6 +3,7 @@ package com.asu.dsa.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,8 @@ public class Student {
     private String city;
     private String phone;
     private String mail;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateCreateStudent;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateModifyStudent;
 }

@@ -269,10 +269,27 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            Data utworzenia recordu
+                            Data utworzenia recordu:
+                            <div class="input-group date" id="dateCreate" data-target-input="nearest">
+                                <div class="input-group-append" data-target="#dateCreate">
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#dateCreate"
+                                           id="dateCreateVehicle" name="dateCreateVehicle"
+                                           value="${vehicle.dateCreateVehicle}" readonly/>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-3">
-                            Data Ostatniej Modyfikacji
+                            Data Ostatniej Modyfikacji:
+                            <div class="input-group date" id="dateEdit" data-target-input="nearest">
+                                <div class="input-group-append" data-target="#dateEdit">
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input" data-target="#dateEdit"
+                                           id="dateModifyVehicle" name="dateModifyVehicle"
+                                           value="${vehicle.dateModifyVehicle}" readonly/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

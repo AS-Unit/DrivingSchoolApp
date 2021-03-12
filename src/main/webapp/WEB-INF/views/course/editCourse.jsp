@@ -139,8 +139,8 @@
                                 <div class="col-sm-4">
                                     <p>Maksymalna ilość uczestnikow:</p>
                                 </div>
-                                <div class="col-sm-1">
-                                    <input type="text" class="form-control"
+                                <div class="col-sm-2">
+                                    <input type="number" class="form-control"
                                            id="maxCountOfStudents"
                                            name="maxCountOfStudents"
                                            value="${course.maxCountOfStudents}"
@@ -160,7 +160,7 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <a href="/employees" type="button" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href='<c:url value="/courses"/>' class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
@@ -168,10 +168,27 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            Data utworzenia recordu
+                            Data utworzenia recordu:
+                            <div class="input-group date" id="dateCreate" data-target-input="nearest">
+                                <div class="input-group-append" data-target="#dateCreate">
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input"
+                                           data-target="#dateCreate"
+                                           id="dateCreateCourse" name="dateCreateCourse"
+                                           value="${course.dateCreateCourse}" readonly/>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-3">
-                            Data Ostatniej Modyfikacji
+                            Data Ostatniej Modyfikacji:
+                            <div class="input-group date" id="dateEdit" data-target-input="nearest">
+                                <div class="input-group-append" data-target="#dateEdit">
+                                    <input type="text" style="text-align: center"
+                                           class="form-control datetimepicker-input" data-target="#dateEdit"
+                                           id="dateModifyCourse" name="dateModifyCourse"
+                                           value="${course.dateModifyCourse}" readonly/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

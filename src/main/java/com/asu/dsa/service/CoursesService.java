@@ -35,13 +35,13 @@ public class CoursesService {
 
     // add course
     public Course addCourse(Course course) {
-        course.setDateCreate(LocalDate.now());
+        course.setDateCreateCourse(LocalDate.now());
         return coursesRepository.save(course);
     }
 
     // update course
     public Course updateCourse(Course course) {
-        //course.setDateModify(LocalDate.now());
+        course.setDateModifyCourse(LocalDate.now());
         return coursesRepository.save(course);
     }
 

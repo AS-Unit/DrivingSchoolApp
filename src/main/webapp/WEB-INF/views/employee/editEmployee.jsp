@@ -447,8 +447,8 @@
                                 <div class="input-group-append" data-target="#dateEdit">
                                     <input type="text" style="text-align: center"
                                            class="form-control datetimepicker-input" data-target="#dateEdit"
-                                           id="dateEditEmployee" name="dateEditEmployee"
-                                           value="${employee.dateEditEmployee}" readonly/>
+                                           id="dateModifyEmployee" name="dateModifyEmployee"
+                                           value="${employee.dateModifyEmployee}" readonly/>
                                 </div>
                             </div>
                         </div>

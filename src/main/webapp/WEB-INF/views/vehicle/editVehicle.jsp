@@ -50,7 +50,34 @@
                                            value="${vehicle.brand}">
                                 </div>
                             </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <p>Model</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="model"
+                                           name="model"
+                                           value="${vehicle.model}">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <p>Rejestracja</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="registrationNo"
+                                           name="registrationNo"
+                                           value="${vehicle.registrationNo}">
+                                </div>
+                            </div>
                         </div>
+
                         <div class="col-md-4">
                             <div class="row">
                                 <div class="col-sm-3">
@@ -64,26 +91,8 @@
                                            value="${vehicle.registrationDate}">
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p>Model</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                           class="form-control"
-                                           id="model"
-                                           name="model"
-                                           value="${vehicle.model}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-sm-3">
                                     <p>Paliwo i Silnik</p>
                                 </div>
@@ -95,26 +104,8 @@
                                            value="${vehicle.fuelAndEngine}">
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p>Rejestracja</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                           class="form-control"
-                                           id="registrationNo"
-                                           name="registrationNo"
-                                           value="${vehicle.registrationNo}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-sm-3">
                                     <p>VIN</p>
                                 </div>
@@ -268,8 +259,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            Data utworzenia recordu:
+
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateCreate" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateCreate">
                                     <input type="text" style="text-align: center"
@@ -279,9 +270,9 @@
                                            value="${vehicle.dateCreateVehicle}" readonly/>
                                 </div>
                             </div>
+                            <p class="text-center">Data utworzenia recordu</p>
                         </div>
-                        <div class="col-md-3">
-                            Data Ostatniej Modyfikacji:
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateEdit" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateEdit">
                                     <input type="text" style="text-align: center"
@@ -290,6 +281,7 @@
                                            value="${vehicle.dateModifyVehicle}" readonly/>
                                 </div>
                             </div>
+                            <p class="text-center">Data Ostatniej Modyfikacji</p>
                         </div>
                     </div>
                 </div>

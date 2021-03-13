@@ -50,6 +50,33 @@
                                            placeholder="">
                                 </div>
                             </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <p>Model</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="model"
+                                           name="model"
+                                           placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-sm-3">
+                                    <p>Rejestracja</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="registrationNo"
+                                           name="registrationNo"
+                                           placeholder="">
+                                </div>
+                            </div>
+
                         </div>
                         <div class="col-md-4">
                             <div class="row">
@@ -64,26 +91,8 @@
                                            placeholder="">
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p>Model</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                           class="form-control"
-                                           id="model"
-                                           name="model"
-                                           placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-sm-3">
                                     <p>Paliwo i Silnik</p>
                                 </div>
@@ -95,26 +104,8 @@
                                            placeholder="">
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <p>Rejestracja</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                           class="form-control"
-                                           id="registrationNo"
-                                           name="registrationNo"
-                                           placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
+                            <div class="row mt-3">
                                 <div class="col-sm-3">
                                     <p>VIN</p>
                                 </div>
@@ -126,10 +117,12 @@
                                            placeholder="">
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="card-header">
                 <div class="container-fluid">
                     <div class="row">
@@ -265,12 +258,6 @@
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            Data utworzenia recordu
-                        </div>
-                        <div class="col-md-3">
-                            Data Ostatniej Modyfikacji
                         </div>
                     </div>
                 </div>

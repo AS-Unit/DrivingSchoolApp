@@ -27,9 +27,8 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h4 class="m-0 text-dark">Dane Kursanta</h4>
-                        </div><!-- /.col -->
-
-                    </div><!-- /.row -->
+                        </div>
+                    </div>
                 </div><!-- /.container-fluid -->
             </div>
         </div>
@@ -41,6 +40,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <p>Imię</p>
@@ -49,7 +49,27 @@
                                 <input type="text" class="form-control" placeholder="" id="firstName" name="firstName">
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p>Nazwisko</p>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <input type="text" class="form-control" placeholder="" id="lastName" name="lastName" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p>Indeks</p>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <input type="text" class="form-control" placeholder="" id="noIndex" name="noIndex">
+                            </div>
+                        </div>
+
                     </div>
+
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-sm-3">
@@ -59,21 +79,7 @@
                                 <input type="text" class="form-control" placeholder="" id="city" name="city">
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p>Nazwisko</p>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="lastName" name="lastName" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
                         <div class="row">
                             <div class="col-sm-3">
                                 <p>Telefon</p>
@@ -87,23 +93,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p>Indeks</p>
-                            </div>
-                            <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="noIndex" name="noIndex">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-sm-3">
                                 <p>Mail</p>
                             </div>
@@ -291,17 +282,8 @@
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
                                 </div>
                             </div>
-
-
                         </div>
 
-                        <div class="col-md-3">
-                        Data utworzenia recordu
-                    </div>
-
-                    <div class="col-md-3">
-                        Data Ostatniej Modyfikacji
-                    </div>
                 </div>
             </div>
         </div>

@@ -165,12 +165,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            Data utworzenia recordu
-                        </div>
-                        <div class="col-md-3">
-                            Data Ostatniej Modyfikacji
-                        </div>
                     </div>
                 </div>
             </div>

@@ -147,22 +147,22 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
-                            Data utworzenia recordu:
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateCreate" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input" data-target="#dateCreate"
                                        id="dateCreateClassroom" name="dateCreateClassroom"
                                        value="${classroom.dateCreateClassroom}" readonly/>
                             </div>
+                            <p class="text-center">Data utworzenia recordu</p>
                         </div>
 
-                        <div class="col-md-3">
-                            Data Ostatniej Modyfikacji:
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateEdit" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input" data-target="#dateEdit"
                                        id="dateEditClassroom" name="dateEditClassroom"
                                        value="${classroom.dateEditClassroom}" readonly/>
                             </div>
+                            <p class="text-center">Data Ostatniej Modyfikacji</p>
                         </div>
                     </div>
                 </div>

@@ -97,9 +97,9 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" id="place" name="place">
-                                            <option>sala 1</option>
-                                            <option>sala 2</option>
-                                            <option>sala 3</option>
+                                            <c:forEach items="${classroom}" var="classroom">
+                                            <option>${classroom.name}</option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>

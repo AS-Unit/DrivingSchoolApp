@@ -168,8 +168,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            Data utworzenia recordu:
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateCreate" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateCreate">
                                     <input type="text" style="text-align: center"
@@ -179,9 +178,9 @@
                                            value="${course.dateCreateCourse}" readonly/>
                                 </div>
                             </div>
+                            <p class="text-center">Data utworzenia recordu</p>
                         </div>
-                        <div class="col-md-3">
-                            Data Ostatniej Modyfikacji:
+                        <div class="col-md-2">
                             <div class="input-group date" id="dateEdit" data-target-input="nearest">
                                 <div class="input-group-append" data-target="#dateEdit">
                                     <input type="text" style="text-align: center"
@@ -190,6 +189,7 @@
                                            value="${course.dateModifyCourse}" readonly/>
                                 </div>
                             </div>
+                            <p class="text-center">Data Ostatniej Modyfikacji</p>
                         </div>
                     </div>
                 </div>

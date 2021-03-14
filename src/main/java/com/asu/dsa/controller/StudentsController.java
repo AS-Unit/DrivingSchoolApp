@@ -1,7 +1,7 @@
 package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Student;
-import com.asu.dsa.service.StudentService;
+import com.asu.dsa.service.StudentsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,18 +11,18 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/students")
-public class StudentController {
+public class StudentsController {
 
-    private final StudentService studentService;
+    private final StudentsService studentsService;
 
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+    public StudentsController(StudentsService studentsService) {
+        this.studentsService = studentsService;
     }
 
     // get all students list
     @GetMapping
     public String getAllStudents(Model model) {
-        List<Student> list = studentService.getAllStudent();
+        List<Student> list = studentsService.getAllStudent();
         model.addAttribute("student", list);
         return "views/student/students";
     }
@@ -30,7 +30,7 @@ public class StudentController {
     // get student by id for edit
     @GetMapping("editStudent/{id}")
     public String getStudentById(@PathVariable("id") Long id, Model model) {
-        Student student = studentService.getStudentById(id);
+        Student student = studentsService.getStudentById(id);
         model.addAttribute("student", student);
         return "views/student/editStudent";
     }
@@ -44,21 +44,21 @@ public class StudentController {
     // save the new student
     @PostMapping("/addNewStudent")
     public RedirectView addNewStudent(@ModelAttribute Student student) {
-        studentService.addStudent(student);
+        studentsService.addStudent(student);
         return new RedirectView("/students");
     }
 
     // save edited student
     @PostMapping("/editStudent/{id}")
     public RedirectView saveEditedStudent(@ModelAttribute Student student) {
-        studentService.updateStudent(student);
+        studentsService.updateStudent(student);
         return new RedirectView("/students");
     }
 
     // remove existed student
     @GetMapping("delete/{id}")
     public RedirectView deleteStudent(@PathVariable Long id) {
-        studentService.deleteStudent(id);
+        studentsService.deleteStudent(id);
         return new RedirectView("/students/");
     }
 

@@ -39,7 +39,6 @@ public class CoursesController {
     @GetMapping("addNewCourse")
     public String getViewForNewCorse(Model model) {
         List<Classroom> listClassroom = classroomsService.getAllClassroomsByStatus("aktywna");
-        System.out.println(listClassroom.get(0).getName());
         model.addAttribute("classroom", listClassroom);
         return "views/course/addNewCourse";
     }

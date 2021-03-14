@@ -96,10 +96,16 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="place" name="place">
-                                            <c:forEach items="${classroom}" var="classroom">
-                                            <option>${classroom.name}</option>
+                                        <select class="form-control" id="place" name="place" onchange="getValue()">
+                                            <c:if test="${classroom.size() == 0}">
+                                                <option>dodaj salę lekcyjną</option>
+                                            </c:if>
+                                            <c:if test="${classroom.size() > 0}">
+                                                <option>wybierz salę lekcyjną</option>
+                                            <c:forEach items="${classroom}" varStatus="status" var="classroom">
+                                            <option value="${classroom.maxCountOfStudents}">${classroom.name}</option>
                                             </c:forEach>
+                                            </c:if>
                                         </select>
                                     </div>
                                 </div>
@@ -141,8 +147,7 @@
                                 <div class="col-sm-2">
                                     <input type="number" class="form-control"
                                            id="maxCountOfStudents"
-                                           name="maxCountOfStudents"
-                                           placeholder="">
+                                           name="maxCountOfStudents">
                                 </div>
                             </div>
                         </div>
@@ -178,5 +183,12 @@
 <!-- ./wrapper -->
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
+<script>
+
+    function getValue(){
+        document.getElementById("maxCountOfStudents").value = document.getElementById("place").value
+    }
+
+</script>
 </body>
 </html>

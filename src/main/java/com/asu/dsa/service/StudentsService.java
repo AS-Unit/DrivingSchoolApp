@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-public class StudentService {
+public class StudentsService {
 
     private final StudentRepository studentRepository;
 
     @Autowired
-    public StudentService(StudentRepository studentRepository) {
+    public StudentsService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 

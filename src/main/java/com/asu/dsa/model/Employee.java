@@ -34,6 +34,9 @@ public class Employee {
     private String isLecturerC;
     private String isLecturerD;
     private String isLecturerT;
+    private String isLecturerBe;
+    private String isLecturerCe;
+    private String isLecturerDe;
 
     private String noPermission;
     @DateTimeFormat(pattern = "yyyy-MM-dd")

@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
-public class VehicleService {
+public class VehiclesService {
 
     private final VehicleRepository vehicleRepository;
 
     @Autowired
-    public VehicleService(VehicleRepository vehicleRepository) {
+    public VehiclesService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 

@@ -1,24 +1,25 @@
 package com.asu.dsa.service;
 
+import com.asu.dsa.model.Classroom;
 import com.asu.dsa.model.Course;
+import com.asu.dsa.repository.ClassroomsRepository;
 import com.asu.dsa.repository.CoursesRepository;
 import com.asu.dsa.service.exception.NoCourseFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class CoursesService {
     private final CoursesRepository coursesRepository;
+    private final ClassroomsRepository classroomsRepository;
 
-    @Autowired
 
-    public CoursesService(CoursesRepository coursesRepository) {
-        this.coursesRepository = coursesRepository;
-    }
 
     // get all course
     public List<Course> getAllCourses() {
@@ -36,6 +37,23 @@ public class CoursesService {
     // add course
     public Course addCourse(Course course) {
         course.setDateCreateCourse(LocalDate.now());
+        switch (course.getType()){
+            case "1": course.setType("wieczorowy");
+            break;
+            case "2": course.setType("weekendowy");
+            break;
+            case "3": course.setType("online");
+            break;
+            case "4": course.setType("szkolenie z pierwszej pomocy");
+            break;
+        }
+        if (course.getPlace().equals("0")){
+            course.setPlace("nie podano miejsca");
+        }
+
+       Optional<Classroom> classroom = classroomsRepository.findById(Long.parseLong(course.getPlace()));
+        course.setPlace(classroom.get().getName());
+
         return coursesRepository.save(course);
     }
 

@@ -74,10 +74,10 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" id="type" name="type">
-                                            <option>wieczorowy</option>
-                                            <option>weekendowy</option>
-                                            <option>online</option>
-                                            <option>szkolenie z pierwszej pomocy</option>
+                                            <option value="1">wieczorowy</option>
+                                            <option value="2">weekendowy</option>
+                                            <option value="3">online</option>
+                                            <option value="4">szkolenie z pierwszej pomocy</option>
                                         </select>
                                     </div>
                                 </div>
@@ -96,14 +96,16 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="place" name="place" onchange="getValue()">
-                                            <c:if test="${classroom.size() == 0}">
-                                                <option>dodaj salę lekcyjną</option>
+                                        <select class="form-control" id="place" name="place" onchange="getMaxCountOfStudent()">
+                                            <c:if test="${activeClassroom.size() == 0}">
+                                                <option value="0">dodaj salę lekcyjną</option>
                                             </c:if>
-                                            <c:if test="${classroom.size() > 0}">
+                                            <c:if test="${activeClassroom.size() > 0}">
                                                 <option>wybierz salę lekcyjną</option>
-                                            <c:forEach items="${classroom}" varStatus="status" var="classroom">
-                                            <option value="${classroom.maxCountOfStudents}">${classroom.name}</option>
+                                            <c:forEach items="${activeClassroom}" var="activeClassroom">
+
+                                                <option id="${activeClassroom.id}" data-max-student="${activeClassroom.maxCountOfStudents}" value="${activeClassroom.id}">${activeClassroom.name}</option>
+
                                             </c:forEach>
                                             </c:if>
                                         </select>
@@ -147,7 +149,7 @@
                                 <div class="col-sm-2">
                                     <input type="number" class="form-control"
                                            id="maxCountOfStudents"
-                                           name="maxCountOfStudents">
+                                           name="maxCountOfStudents" value="0">
                                 </div>
                             </div>
                         </div>
@@ -183,11 +185,18 @@
 <!-- ./wrapper -->
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
-<script>
+<script type="application/javascript">
 
-    function getValue(){
-        document.getElementById("maxCountOfStudents").value = document.getElementById("place").value
+    function getMaxCountOfStudent(){
+
+        let x = document.getElementById("place")
+        x.setAttribute("max-student", x.value)
+        let k = document.getElementById("place").getAttribute("max-student")
+        document.getElementById("maxCountOfStudents").value = document.getElementById(k).getAttribute("data-max-student")
+
     }
+
+
 
 </script>
 </body>

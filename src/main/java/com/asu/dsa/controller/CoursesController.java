@@ -39,7 +39,7 @@ public class CoursesController {
     @GetMapping("addNewCourse")
     public String getViewForNewCorse(Model model) {
         List<Classroom> listClassroom = classroomsService.getAllClassroomsByStatus("aktywna");
-        model.addAttribute("classroom", listClassroom);
+        model.addAttribute("activeClassroom", listClassroom);
         return "views/course/addNewCourse";
     }
 

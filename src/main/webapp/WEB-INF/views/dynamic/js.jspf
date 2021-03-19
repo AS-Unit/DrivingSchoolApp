@@ -120,5 +120,6 @@
             $('#deleteModal').modal();
         });
 
+
     })
 </script>

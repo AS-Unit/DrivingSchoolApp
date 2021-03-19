@@ -35,6 +35,14 @@ public class EmployeesService {
                     throw new NoEmployeeFoundException(id);
                 });
     }
+    // get all employee who are Lecturer
+    public List<Employee> getAllLecturerEmployees(String isLecturer){
+        return employeesRepository.findAllByIsLecturer(isLecturer);
+    }
+    //get all employee who are Paramedic
+    public List<Employee> getAllParamedicEmployees(String isParamedic){
+        return employeesRepository.findAllByIsParamedic(isParamedic);
+    }
 
     // add employee
 

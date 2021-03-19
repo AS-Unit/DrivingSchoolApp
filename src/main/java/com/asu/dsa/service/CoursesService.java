@@ -37,22 +37,15 @@ public class CoursesService {
     // add course
     public Course addCourse(Course course) {
         course.setDateCreateCourse(LocalDate.now());
-        switch (course.getType()){
-            case "1": course.setType("wieczorowy");
-            break;
-            case "2": course.setType("weekendowy");
-            break;
-            case "3": course.setType("online");
-            break;
-            case "4": course.setType("szkolenie z pierwszej pomocy");
-            break;
-        }
+
         if (course.getPlace().equals("0")){
             course.setPlace("nie podano miejsca");
+        } else {
+            Optional<Classroom> classroom = classroomsRepository.findById(Long.parseLong(course.getPlace()));
+            course.setPlace(classroom.get().getName());
         }
 
-       Optional<Classroom> classroom = classroomsRepository.findById(Long.parseLong(course.getPlace()));
-        course.setPlace(classroom.get().getName());
+
 
         return coursesRepository.save(course);
     }

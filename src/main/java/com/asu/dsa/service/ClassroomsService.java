@@ -25,6 +25,7 @@ public class ClassroomsService {
         return classroomsRepository.findAll();
     }
 
+    // get all classroom by status
     public List<Classroom> getAllClassroomsByStatus(String status){
         return classroomsRepository.findAllByStatus(status);
     }

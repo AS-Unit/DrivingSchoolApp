@@ -2,8 +2,10 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Classroom;
 import com.asu.dsa.model.Course;
+import com.asu.dsa.model.Employee;
 import com.asu.dsa.service.ClassroomsService;
 import com.asu.dsa.service.CoursesService;
+import com.asu.dsa.service.EmployeesService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,7 @@ public class CoursesController {
 
     private final CoursesService coursesService;
     private final ClassroomsService classroomsService;
-
+    private final EmployeesService employeesService;
     // get all courses list
     @GetMapping
     public String getAllCourse(Model model) {
@@ -40,6 +42,12 @@ public class CoursesController {
     public String getViewForNewCorse(Model model) {
         List<Classroom> listClassroom = classroomsService.getAllClassroomsByStatus("aktywna");
         model.addAttribute("activeClassroom", listClassroom);
+        List<Employee> employeeList = employeesService.getAllEmployee();
+        model.addAttribute("employeList",employeeList);
+        List<Employee> listLecturerEmployees = employeesService.getAllLecturerEmployees("true");
+        model.addAttribute("lecturerEmployee", listLecturerEmployees);
+        List<Employee> listParamedicEmployee = employeesService.getAllParamedicEmployees("true");
+        model.addAttribute("paramedicEmployee", listParamedicEmployee);
         return "views/course/addNewCourse";
     }
 

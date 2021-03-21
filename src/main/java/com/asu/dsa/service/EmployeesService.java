@@ -3,7 +3,7 @@ package com.asu.dsa.service;
 import com.asu.dsa.model.Employee;
 import com.asu.dsa.repository.EmployeesRepository;
 import com.asu.dsa.service.exception.NoEmployeeFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -11,15 +11,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@AllArgsConstructor
 public class EmployeesService {
 
     private final EmployeesRepository employeesRepository;
-
-    @Autowired
-
-    public EmployeesService(EmployeesRepository employeesRepository) {
-        this.employeesRepository = employeesRepository;
-    }
 
     //    get all employee
     public List<Employee> getAllEmployee() {

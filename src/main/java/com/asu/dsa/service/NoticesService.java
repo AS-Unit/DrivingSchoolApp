@@ -1,8 +1,8 @@
 package com.asu.dsa.service;
 
+import com.asu.dsa.model.Notice;
 import com.asu.dsa.repository.NoticesRepository;
 import com.asu.dsa.service.exception.NoNoticeFoundExceptions;
-import com.mysql.cj.protocol.x.Notice;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

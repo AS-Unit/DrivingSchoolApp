@@ -3,7 +3,7 @@ package com.asu.dsa.service;
 import com.asu.dsa.model.Classroom;
 import com.asu.dsa.repository.ClassroomsRepository;
 import com.asu.dsa.service.exception.NoClassroomFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -11,14 +11,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@AllArgsConstructor
 public class ClassroomsService {
     private final ClassroomsRepository classroomsRepository;
 
-    @Autowired
-
-    public ClassroomsService(ClassroomsRepository classroomsRepository) {
-        this.classroomsRepository = classroomsRepository;
-    }
 
     // get all classroom
     public List<Classroom> getAllClassrooms() {

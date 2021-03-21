@@ -1,6 +1,6 @@
 package com.asu.dsa.repository;
 
-import com.mysql.cj.protocol.x.Notice;
+import com.asu.dsa.model.Notice;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -74,11 +74,11 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="type" name="type" value="${course.type}">
-                                            <option>wieczorowy</option>
-                                            <option>weekendowy</option>
-                                            <option>online</option>
-                                            <option>szkolenie z pierwszej pomocy</option>
+                                        <select class="form-control" id="type" name="type" onchange="getElement()" >
+                                            <option value="wieczorowy" <c:if test='${course.type.equals("wieczorowy") }'> selected </c:if>>wieczorowy</option>
+                                            <option value="weekendowy" <c:if test='${course.type.equals("weekendowy")}'> selected </c:if>>weekendowy</option>
+                                            <option value="online" <c:if test='${course.type.equals("online")}'> selected </c:if>>online</option>
+                                            <option value="szkolenie z pierwszej pomocy" <c:if test='${course.type.equals("szkolenie z pierwszej pomocy")}'> selected </c:if>>szkolenie z pierwszej pomocy</option>
                                         </select>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="place" name="place" valeu="${course.place}">
+                                        <select class="form-control" id="place" name="place" value="${course.place}">
                                             <option>sala 1</option>
                                             <option>sala 2</option>
                                             <option>sala 3</option>
@@ -204,5 +204,10 @@
 <!-- ./wrapper -->
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
+
+<script>
+    function getElement() {console.log(document.getElementById("type").value)}
+</script>
+
 </body>
 </html>

@@ -74,10 +74,11 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" id="type" name="type">
-                                            <option>wieczorowy</option>
-                                            <option>weekendowy</option>
-                                            <option>online</option>
-                                            <option>szkolenie z pierwszej pomocy</option>
+                                            <option></option>
+                                            <option>WIECZOROWE</option>
+                                            <option>WEEKENDOWE</option>
+                                            <option>ONLINE</option>
+                                            <option>PIERWSZAPOMOC</option>
                                         </select>
                                     </div>
                                 </div>

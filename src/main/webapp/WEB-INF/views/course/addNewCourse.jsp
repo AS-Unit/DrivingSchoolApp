@@ -96,10 +96,18 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="place" name="place">
-                                            <option>sala 1</option>
-                                            <option>sala 2</option>
-                                            <option>sala 3</option>
+                                        <select class="form-control" id="place" name="place" onchange="getMaxCountOfStudent()">
+                                            <c:if test="${activeClassroom.size() == 0}">
+                                                <option value="0">dodaj salę lekcyjną</option>
+                                            </c:if>
+                                            <c:if test="${activeClassroom.size() > 0}">
+                                                <option value="0">wybierz salę lekcyjną</option>
+                                            <c:forEach items="${activeClassroom}" var="activeClassroom">
+
+                                                <option id="${activeClassroom.id}" data-max-student="${activeClassroom.maxCountOfStudents}" value="${activeClassroom.id}">${activeClassroom.name}</option>
+
+                                            </c:forEach>
+                                            </c:if>
                                         </select>
                                     </div>
                                 </div>
@@ -119,9 +127,21 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <select class="form-control" id="lecturer" name="lecturer">
-                                            <option>Jan Kowalski</option>
-                                            <option>Jerzy Brzęczek</option>
-                                            <option>Wojciech Niemocny</option>
+                                            <optgroup id="employeeList">
+                                                <c:forEach items="${employeList}" var="employeList">
+                                                    <option>${employeList.firstName} ${employeList.lastName}</option>
+                                                </c:forEach>
+                                            </optgroup>
+                                            <optgroup id="isLecturer" label="Wykładowcy" hidden>
+                                            <c:forEach items="${lecturerEmployee}" var="employeeLecturer">
+                                            <option>${employeeLecturer.firstName} ${employeeLecturer.lastName}</option>
+                                            </c:forEach>
+                                            </optgroup>
+                                            <optgroup id="isParamedic" label="Medycy" hidden>
+                                                <c:forEach items="${paramedicEmployee}" var="paramedicEmployee">
+                                                    <option>${paramedicEmployee.firstName} ${paramedicEmployee.lastName}</option>
+                                                </c:forEach>
+                                            </optgroup>
                                         </select>
                                     </div>
                                 </div>
@@ -141,8 +161,7 @@
                                 <div class="col-sm-2">
                                     <input type="number" class="form-control"
                                            id="maxCountOfStudents"
-                                           name="maxCountOfStudents"
-                                           placeholder="">
+                                           name="maxCountOfStudents" value="0">
                                 </div>
                             </div>
                         </div>
@@ -178,5 +197,32 @@
 <!-- ./wrapper -->
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
+<script>
+
+    function getMaxCountOfStudent(){
+
+        let place = document.getElementById("place")
+        place.setAttribute("max-student", place.value)
+        let maxStudent = document.getElementById("place").getAttribute("max-student")
+        document.getElementById("maxCountOfStudents").value = document.getElementById(maxStudent).getAttribute("data-max-student")
+    }
+function  getValueType(){
+        const nameType = "szkolenie z pierwszej pomocy";
+        let dataTypeValue = document.getElementById("type").value;
+        let employeeList = document.getElementById("employeeList");
+        let isParamedic = document.getElementById("isParamedic");
+        let isLecturer = document.getElementById("isLecturer");
+
+        if  (dataTypeValue === nameType){
+            employeeList.setAttribute("hidden","hidden");
+            isParamedic.removeAttribute("hidden");
+            isLecturer.setAttribute("hidden","hidden");
+        } else {
+            employeeList.setAttribute("hidden","hidden");
+            isLecturer.removeAttribute("hidden");
+            isParamedic.setAttribute("hidden","hidden");
+    }
+}
+</script>
 </body>
 </html>

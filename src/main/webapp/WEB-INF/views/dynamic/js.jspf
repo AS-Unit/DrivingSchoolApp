@@ -92,7 +92,7 @@
         )
 
         //Timepicker
-        $('#reservationdate,#permissionExpirationDate,#drivingLicenseExpirationDate,#dateEdit,#dateCreate,#dateCreateEmployee,#dateEditEmployee, #startCourseDate, #validityOfInsurance, #validityOfTechnicalReview').datetimepicker({
+        $('#reservationdate,#permissionExpirationDate,#drivingLicenseExpirationDate,#dateEdit,#dateCreate,#dateCreateEmployee,#dateEditEmployee, #startCourseDate, #validityOfInsurance, #validityOfTechnicalReview, #startNotice, #endNotice').datetimepicker({
             format: 'YYYY-MM-DD'
         });
 
@@ -119,6 +119,7 @@
             $('#deleteModal #delRef').attr('href', href);
             $('#deleteModal').modal();
         });
+
 
     })
 </script>

@@ -2,6 +2,7 @@ package com.asu.dsa.controller;
 
 import com.asu.dsa.model.Employee;
 import com.asu.dsa.service.EmployeesService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,13 +13,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/employees")
+@AllArgsConstructor
 public class EmployeesController {
 
     private final EmployeesService employeesService;
-
-    public EmployeesController(EmployeesService employeesService) {
-        this.employeesService = employeesService;
-    }
 
     // get all employees list
     @GetMapping

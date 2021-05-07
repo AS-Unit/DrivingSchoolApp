@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -53,6 +54,12 @@ public class CoursesService {
                 });
         coursesRepository.delete(course);
         return course;
+    }
+
+    // list for all course types
+    public List<Course.CourseType> getAllCoursesTypes() {
+        List<Course.CourseType> typesList = Arrays.asList(Course.CourseType.values());
+        return typesList;
     }
 
 }

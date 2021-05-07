@@ -74,11 +74,11 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="type" name="type" onchange="getElement()" >
-                                            <option value="wieczorowy" <c:if test='${course.type.equals("wieczorowy") }'> selected </c:if>>wieczorowy</option>
-                                            <option value="weekendowy" <c:if test='${course.type.equals("weekendowy")}'> selected </c:if>>weekendowy</option>
-                                            <option value="online" <c:if test='${course.type.equals("online")}'> selected </c:if>>online</option>
-                                            <option value="szkolenie z pierwszej pomocy" <c:if test='${course.type.equals("szkolenie z pierwszej pomocy")}'> selected </c:if>>szkolenie z pierwszej pomocy</option>
+                                        <select class="form-control" id="courseType" name="courseType">
+                                            <option hidden>${course.courseType}</option>
+                                            <c:forEach items="${courseTypeList}" var="type">
+                                                <option><c:out value="${type}"/></option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>

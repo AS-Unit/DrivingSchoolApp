@@ -84,7 +84,7 @@
                                                    varStatus="loop">
                                             <tr>
                                                 <td>${loop.count}</td>
-                                                <td>${course.type}</td>
+                                                <td>${course.courseType}</td>
                                                 <td>${course.place}</td>
                                                 <td>${course.startCourseDate}</td>
                                                 <td>${course.maxCountOfStudents}</td>

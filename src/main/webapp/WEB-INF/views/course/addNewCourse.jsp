@@ -73,12 +73,11 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="type" name="type">
-                                            <option></option>
-                                            <option>WIECZOROWE</option>
-                                            <option>WEEKENDOWE</option>
-                                            <option>ONLINE</option>
-                                            <option>PIERWSZAPOMOC</option>
+                                        <select class="form-control" id="courseType" name="courseType">
+                                            <option hidden>wybierz</option>
+                                            <c:forEach items="${courseTypeList}" var="type">
+                                                <option><c:out value="${type}"/></option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>

@@ -20,8 +20,8 @@ public class Course {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 16)
-    private Mode type;
-    public enum Mode {
+    private CourseType courseType;
+    public enum CourseType {
         WIECZOROWE, WEEKENDOWE, ONLINE, PIERWSZAPOMOC
     }
     private String category;

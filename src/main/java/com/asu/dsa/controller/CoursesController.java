@@ -27,17 +27,21 @@ public class CoursesController {
         return "views/course/courses";
     }
 
-    // get course by id for edit
+    // get view for edit course by id
     @GetMapping("editCourse/{id}")
     public String getCourseById(@PathVariable("id") Long id, Model model) {
         Course course = coursesService.getCourseById(id);
         model.addAttribute("course", course);
+        List<Course.CourseType> courseTypeList = coursesService.getAllCoursesTypes();
+        model.addAttribute("courseTypeList",courseTypeList);
         return "views/course/editCourse";
     }
 
     // get view for add new course
     @GetMapping("addNewCourse")
-    public String getViewForNewCorse() {
+    public String getViewForNewCourse(Model model) {
+        List<Course.CourseType> courseTypeList = coursesService.getAllCoursesTypes();
+        model.addAttribute("courseTypeList",courseTypeList);
         return "views/course/addNewCourse";
     }
 

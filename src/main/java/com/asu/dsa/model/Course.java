@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
@@ -28,6 +29,12 @@ public class Course {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startCourseDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate finishCourseDate;
+    @DateTimeFormat(pattern = "kk-mm")
+    private LocalTime startCourseTime;
+    @DateTimeFormat(pattern = "kk-mm")
+    private LocalTime finishCourseTime;
     private String lecturer;
     private String place;
     private int maxCountOfStudents;

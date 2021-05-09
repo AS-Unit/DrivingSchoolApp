@@ -20,8 +20,6 @@ public class CoursesService {
     private final CoursesRepository coursesRepository;
     private final ClassroomsRepository classroomsRepository;
 
-
-
     // get all course
     public List<Course> getAllCourses() {
         return coursesRepository.findAll();
@@ -38,16 +36,12 @@ public class CoursesService {
     // add course
     public Course addCourse(Course course) {
         course.setDateCreateCourse(LocalDate.now());
-
         if (course.getPlace().equals("0")){
             course.setPlace("nie podano miejsca");
         } else {
             Optional<Classroom> classroom = classroomsRepository.findById(Long.parseLong(course.getPlace()));
             course.setPlace(classroom.get().getName());
         }
-
-
-
         return coursesRepository.save(course);
     }
 

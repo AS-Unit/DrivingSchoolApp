@@ -59,6 +59,70 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Data zakończenia zajęć:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group date"
+                                         id="finishCourseDate"
+                                         data-target-input="nearest">
+                                        <input type="text"
+                                               class="form-control datetimepicker"
+                                               data-target="#finishCourseDate"
+                                               name="finishCourseDate">
+                                        <div class="input-group-append"
+                                             data-target="#finishCourseDate"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Godziny rozpoczęcia zajęć:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group date"
+                                         id="startCourseTime"
+                                         data-target-input="nearest">
+                                        <input type="text"
+                                               class="form-control datetimepicker"
+                                               data-target="startCourseTime"
+                                               name="startCourseTime">
+                                        <div class="input-group-append"
+                                             data-target="#startCourseTime"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Godzina zakończenia zajęć:</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group date"
+                                         id="finishCourseTime"
+                                         data-target-input="nearest">
+                                        <input type="text"
+                                               class="form-control datetimepicker"
+                                               data-target="finishCourseTime"
+                                               name="finishCourseTime">
+                                        <div class="input-group-append"
+                                             data-target="#finishCourseTime"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

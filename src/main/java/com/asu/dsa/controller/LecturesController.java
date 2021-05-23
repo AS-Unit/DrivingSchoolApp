@@ -26,29 +26,27 @@ public class LecturesController {
         model.addAttribute("lecture", list);
         return "views/lecture/lectures";
     }
-/*
     // get all lectures list by course
-    @GetMapping
+/*    @GetMapping
     public String getAllLecturesByCourse(Course course, Model model) {
         List<Lecture> list = lecturesService.getAllLecturesByCourse(course);
         model.addAttribute("lectureByCourse", list);
         return "views/lecture/lectures"; //fixme address
-    }
+    }*/
 
     // get all lectures list by lector
 
     // get view for adding new lecture
     @GetMapping("addNewLecture")
     public String viewNewLecture() {
-        return "views/course/addNewLecture"; //fixme address
-    }*/
+        return "views/lecture/addNewLecture";
 
     // get view for edition lecture
-    @GetMapping("editLecture/{id}")
-    public String getLectureById(@PathVariable("id") Long id, Model model) {
+/*    @GetMapping("editLecture/{id}")
+    public String getLectureById (@PathVariable("id") Long id, Model model) {
         Lecture lecture = lecturesService.getLectureById(id);
         model.addAttribute("lecture", lecture);
-        return "views/lecture/editLecture";
+        return "views/lecture/editLecture";*/
     }
 
     // save new lecture

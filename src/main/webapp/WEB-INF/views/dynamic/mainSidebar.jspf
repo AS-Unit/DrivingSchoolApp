@@ -111,7 +111,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href='<c:url value="/lecutres"/>' class="nav-link">
+                            <a href='<c:url value="/lectures"/>' class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>Lekcje</p>
                             </a>

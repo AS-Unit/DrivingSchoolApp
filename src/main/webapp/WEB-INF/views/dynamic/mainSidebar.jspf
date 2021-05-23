@@ -111,6 +111,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href='<c:url value="/lecutres"/>' class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>Lekcje</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href='<c:url value="/classrooms"/>' class="nav-link">
                                 <i class="nav-icon fas fa-door-open"></i>
                                 <p>Sale lekcyjne</p>

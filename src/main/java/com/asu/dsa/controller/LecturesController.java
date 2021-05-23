@@ -24,15 +24,15 @@ public class LecturesController {
     public String getAllLectures(Model model) {
         List<Lecture> list = lecturesService.getAllLectures();
         model.addAttribute("lecture", list);
-        return "view/lecture/lectures";
+        return "views/lecture/lectures";
     }
-
+/*
     // get all lectures list by course
     @GetMapping
     public String getAllLecturesByCourse(Course course, Model model) {
         List<Lecture> list = lecturesService.getAllLecturesByCourse(course);
         model.addAttribute("lectureByCourse", list);
-        return "views/lecture/course{idCourse}/lecturesByCourse"; //fixme address
+        return "views/lecture/lectures"; //fixme address
     }
 
     // get all lectures list by lector
@@ -41,14 +41,14 @@ public class LecturesController {
     @GetMapping("addNewLecture")
     public String viewNewLecture() {
         return "views/course/addNewLecture"; //fixme address
-    }
+    }*/
 
     // get view for edition lecture
     @GetMapping("editLecture/{id}")
     public String getLectureById(@PathVariable("id") Long id, Model model) {
         Lecture lecture = lecturesService.getLectureById(id);
         model.addAttribute("lecture", lecture);
-        return "views/course/lecture/editLecture";
+        return "views/lecture/editLecture";
     }
 
     // save new lecture

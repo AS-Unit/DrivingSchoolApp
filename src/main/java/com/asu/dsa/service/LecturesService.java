@@ -32,10 +32,10 @@ public class LecturesService {
                 });
     }
 
-    // get lectures by course
+/*    // get lectures by course
     public List<Lecture> getAllLecturesByCourse(Course course) {
         return lecturesRepository.findAllByCourse(course);
-    }
+    }*/
 
     // get lectures by classroom todo
 

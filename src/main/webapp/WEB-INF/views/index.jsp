@@ -26,7 +26,7 @@
                                 <h5><i class="fas fa-bullhorn"> Ogłoszenia</i></h5>
                             </div>
                             <div class="col md-2"><button type="button" class="btn btn-default" data-toggle="modal"
-                                                          data-target="#add-notice">dodaj ogłoszenie</button></div>
+                                                          data-target="#add-message">dodaj ogłoszenie</button></div>
                         </div>
                     </div>
                     <div class="row">
@@ -108,7 +108,7 @@
         <!-- /.content-header -->
 
         <!-- modal content -->
-        <div class="modal fade" id="add-notice">
+        <div class="modal fade" id="add-message">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-primary">

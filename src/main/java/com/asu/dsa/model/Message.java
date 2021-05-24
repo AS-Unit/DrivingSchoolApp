@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Notice {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

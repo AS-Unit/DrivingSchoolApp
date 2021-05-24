@@ -1,26 +1,25 @@
 package com.asu.dsa.controller;
 
 
-import com.asu.dsa.model.Notice;
-import com.asu.dsa.service.NoticesService;
+import com.asu.dsa.model.Message;
+import com.asu.dsa.service.MessagesService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/index")
 @AllArgsConstructor
-public class NoticesController {
-    private final NoticesService noticesService;
+public class MessagesController {
+    private final MessagesService messagesService;
 
     //get all notices list
     @GetMapping("/index")
     public void getAllNotices(Model model) {
-        List<Notice> list = noticesService.getAllNotices();
+        List<Message> list = messagesService.getAllNotices();
         model.addAttribute("notice", list);
     }
 

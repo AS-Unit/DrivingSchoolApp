@@ -15,36 +15,44 @@ public class MessagesService {
 
     private final MessagesRepository messagesRepository;
 
-    //get all notice
-public List<Message> getAllNotices(){return messagesRepository.findAll();}
-    //get notice by id
+    //get all messages
+    public List<Message> showOnlyActiveMessage() {
+        return messagesRepository.showOnlyActiveMessage();
 
-    public Message getNoticeById(Long id){
+    }
+    //get message by id
+
+    public Message getMessageById(Long id) {
         return messagesRepository.findById(id)
-                .<NoSuchElementException>orElseThrow(()->{
-            throw new NoMessageFoundExceptions(id);
-        });
-    }
-    // get all notices which have specific type
-    public List<Message> getNoticeByType(String noticeType){
-        return messagesRepository.findAllByNoticeType(noticeType);
+                .<NoSuchElementException>orElseThrow(() -> {
+                    throw new NoMessageFoundExceptions(id);
+                });
+
     }
 
-    // add notice
-    public Message addNotice(Message message){
+    // get all message which have specific type
+    public List<Message> getMessageByType(String messageType) {
+        return messagesRepository.findAllByMessageType(messageType);
+
+    }
+
+    // add message
+    public Message addMessage(Message message) {
         return messagesRepository.save(message);
     }
 
-    //edit notice
-    public Message updateNotice(Message newMessage){
+    //edit message
+    public Message updateMessage(Message newMessage) {
         return messagesRepository.save(newMessage);
     }
-    //delet notice
-    public void removeNotice(Long id){
+
+    //delete message
+    public void removeMessage(Long id) {
         Message message = messagesRepository.findById(id)
                 .<NoSuchElementException>orElseThrow(() -> {
                     throw new NoMessageFoundExceptions(id);
                 });
+        messagesRepository.delete(message);
     }
 
 

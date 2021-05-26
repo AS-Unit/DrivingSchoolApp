@@ -7,48 +7,35 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping({"/", "index"})
 @AllArgsConstructor
 public class MessagesController {
     private final MessagesService messagesService;
 
-    //get all notices list
-    @GetMapping("/index")
-    public void getAllNotices(Model model) {
-        List<Message> list = messagesService.getAllNotices();
-        model.addAttribute("notice", list);
+    //get all Message list
+    @GetMapping({"index", "/"})
+    public String getActiveMessage(Model model) {
+        List<Message> list = messagesService.showOnlyActiveMessage();
+        model.addAttribute("message", list);
+        return "views/index";
     }
 
-    //set the new notice
-//    @PostMapping("/index")
-//    public RedirectView addNotice(@ModelAttribute Notice notice) {
-//        noticesService.addNotice(notice);
-//        return new RedirectView("/index");
-//    }
+    //save edit message
+    @PostMapping("index")
+    public RedirectView updateNotice(@ModelAttribute Message newMessage) {
+        messagesService.updateMessage(newMessage);
+        return new RedirectView("/index");
+    }
 
-    //get notice by id for edit
-//    @GetMapping("/index")
-//    public String getNoticeById(@PathVariable("id") Long id, Model model) {
-//        Notice notice = noticesService.getNoticeById(id);
-//        model.addAttribute("editNotice", notice);
-//        return "views/index";
-//    }
-
-    //save edit notice
-//    @PostMapping("/index")
-//    public RedirectView updateNotice(@ModelAttribute Notice newNotice) {
-//        noticesService.updateNotice(newNotice);
-//        return new RedirectView("/index");
-//    }
-
-    //delete notice
-//    @GetMapping("index")
-//    public RedirectView removeNotice(@PathVariable Long id) {
-//        noticesService.removeNotice(id);
-//        return new RedirectView("/index");
-//    }
+    //delete message
+    @GetMapping("/delete/{id}")
+    public RedirectView removeNotice(@PathVariable Long id) {
+        messagesService.removeMessage(id);
+        return new RedirectView("/index");
+    }
 }

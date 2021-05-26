@@ -19,13 +19,13 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String noticeTitle;
-    private String noticeText;
-    private String noticeType;
+    private String messageTitle;
+    private String messageText;
+    private String messageType;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate startNoticeData;
+    private LocalDate startMessageData;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate endNoticeData;
+    private LocalDate endMessageData;
     private String employeeAdding;
 
 }

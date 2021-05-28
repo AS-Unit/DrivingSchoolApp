@@ -1,8 +1,14 @@
 package com.asu.dsa.controller;
 
+import com.asu.dsa.model.Classroom;
 import com.asu.dsa.model.Course;
+import com.asu.dsa.model.Employee;
 import com.asu.dsa.model.Lecture;
+import com.asu.dsa.service.ClassroomsService;
+import com.asu.dsa.service.CoursesService;
+import com.asu.dsa.service.EmployeesService;
 import com.asu.dsa.service.LecturesService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,14 +16,14 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/lectures")
 public class LecturesController {
     private final LecturesService lecturesService;
-
-    public LecturesController(LecturesService lecturesService) {
-        this.lecturesService = lecturesService;
-    }
+    private final CoursesService coursesService;
+    private final ClassroomsService classroomsService;
+    private final EmployeesService employeesService;
 
     // get all lectures list
     @GetMapping
@@ -38,7 +44,15 @@ public class LecturesController {
 
     // get view for adding new lecture
     @GetMapping("addNewLecture")
-    public String viewNewLecture() {
+    public String viewNewLecture(Model model) {
+        List<Classroom> listClassroom = classroomsService.getAllClassrooms();
+        model.addAttribute("classroomList", listClassroom);
+        List<Employee> listLecturerEmployees = employeesService.getAllEmployee();
+        model.addAttribute("lecturerEmployee", listLecturerEmployees);
+        List<Course> courseList = coursesService.getAllCourses();
+        model.addAttribute("courseList",courseList);
+        List<Lecture.LectureType> lectureTypesList = lecturesService.getAllLecturesTypes();
+        model.addAttribute("lecturesTypesList", lectureTypesList);
         return "views/lecture/addNewLecture";
 
     // get view for edition lecture

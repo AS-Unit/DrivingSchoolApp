@@ -23,7 +23,7 @@ public class Course {
     @Column(length = 16)
     private CourseType courseType;
     public enum CourseType {
-        WIECZOROWE, WEEKENDOWE, ONLINE, PIERWSZAPOMOC
+        WIECZOROWE, WEEKENDOWE, ONLINE
     }
     private String category;
 

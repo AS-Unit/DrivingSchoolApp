@@ -25,7 +25,6 @@
                         <div class="col-sm-6">
                             <h4 class="m-0 text-dark">Dane lekcji</h4>
                         </div><!-- /.col -->
-
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -39,174 +38,165 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
+
+                            <!-- Row with COURSE parameter -->
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Kurs:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="course" name="course">
+                                            <option hidden>wybierz</option>
+                                            <c:if test="${courseList.size() == 0}">
+                                                <option value="0">brak kursów</option>
+                                            </c:if>
+                                            <c:forEach items="${courseList}" var="course">
+                                                <option><c:out value="${course.id}"/></option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="/courses/addNewCourse" class="btn btn-block btn-primary">Dodaj</a>
+                                </div>
+                            </div>
+                            <!-- /. Row with COURSE parameter -->
+
+                            <!-- Row with LECTURES TYPE parameter -->
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Rodzaj:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="lectureType" name="lectureType">
+                                            <option hidden>wybierz</option>
+                                            <c:forEach items="${lecturesTypesList}" var="lecturesType">
+                                                <option><c:out value="${lecturesType}"/></option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /. Row with LECTURES TYPE parameter -->
+
+                            <!-- Row with PLACE parameter -->
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Lokalizacja:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="place" name="place" onchange="getMaxCountOfStudent()">
+                                            <option hidden>wybierz</option>
+                                            <c:if test="${classroomList.size() == 0}">
+                                                <option value="0">brak lokalizacji</option>
+                                            </c:if>
+                                            <c:if test="${classroomList.size() > 0}">
+                                                <option value="0">wybierz salę lekcyjną</option>
+                                                <c:forEach items="${classroomList}" var="classroom">
+                                                    <option id="${classroom.id}"
+                                                            data-max-student="${classroom.maxCountOfStudents}"
+                                                            value="${classroom.id}">${classroom.name}</option>
+                                                </c:forEach>
+                                            </c:if>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="/lectures/addNewLecture" class="btn btn-block btn-primary">Dodaj</a>
+                                </div>
+                            </div>
+                            <!-- /. Row with PLACE parameter -->
+
+                            <!-- Row with LECTURER parameter -->
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Prowadzący:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="lecturer" name="lecturer">
+                                            <option hidden>wybierz</option>
+                                            <c:if test="${lecturerEmployee.size() == 0}">
+                                                <option value="0">brak prowadzących</option>
+                                            </c:if>
+                                            <optgroup id="isLecturer" label="Wykładowcy" hidden>
+                                                <c:forEach items="${lecturerEmployee}" var="employeeLecturer">
+                                                    <option>${employeeLecturer.firstName} ${employeeLecturer.lastName}</option>
+                                                </c:forEach>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="/employees/addNewEmployee" class="btn btn-block btn-primary">Dodaj</a>
+                                </div>
+                            </div>
+                            <!-- /. Row with LECTURER parameter -->
+
+                            <!-- Row with DAY parameter -->
                             <div class="row">
                                 <div class="col-sm-4">
                                     <p>Dzień</p>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-3">
                                     <div class="input-group date"
-                                         id="startCourseDate"
+                                         id="lectureDay"
                                          data-target-input="nearest">
                                         <input type="text"
                                                class="form-control datetimepicker"
-                                               data-target="#startCourseDate"
-                                               name="startCourseDate">
+                                               data-target="#lectureDay"
+                                               name="lectureDay">
                                         <div class="input-group-append"
-                                             data-target="#startCourseDate"
+                                             data-target="#lectureDay"
                                              data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- /. Row with DAY LECTURE parameter -->
 
+                            <!-- Row with TIME LECTURE parameter -->
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <p>Godziny rozpoczęcia zajęć:</p>
+                                    <p>Godziny:</p>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-3">
                                     <div class="input-group date"
-                                         id="startCourseTime"
+                                         id="lectureBegin"
                                          data-target-input="nearest">
                                         <input type="text"
                                                class="form-control datetimepicker"
-                                               data-target="startCourseTime"
-                                               name="startCourseTime">
+                                               data-target="lectureBegin"
+                                               name="lectureBegin">
                                         <div class="input-group-append"
-                                             data-target="#startCourseTime"
+                                             data-target="#lectureBegin"
+                                             data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="input-group date"
+                                         id="lectureEnd"
+                                         data-target-input="nearest">
+                                        <input type="text"
+                                               class="form-control datetimepicker"
+                                               data-target="lectureEnd"
+                                               name="lectureEnd">
+                                        <div class="input-group-append"
+                                             data-target="#lectureEnd"
                                              data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-clock"></i></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- /. Row with START TIME LECTURE parameter -->
 
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Godzina zakończenia zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group date"
-                                         id="finishCourseTime"
-                                         data-target-input="nearest">
-                                        <input type="text"
-                                               class="form-control datetimepicker"
-                                               data-target="finishCourseTime"
-                                               name="finishCourseTime">
-                                        <div class="input-group-append"
-                                             data-target="#finishCourseTime"
-                                             data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Rodzaj:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <select class="form-control" id="courseType" name="courseType">
-                                            <option hidden>wybierz</option>
-                                            <c:forEach items="${courseTypeList}" var="type">
-                                                <option><c:out value="${type}"/></option>
-                                            </c:forEach>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Miejsce zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <select class="form-control" id="place" name="place" onchange="getMaxCountOfStudent()">
-                                            <c:if test="${activeClassroom.size() == 0}">
-                                                <option value="0">dodaj salę lekcyjną</option>
-                                            </c:if>
-                                            <c:if test="${activeClassroom.size() > 0}">
-                                                <option value="0">wybierz salę lekcyjną</option>
-                                                <c:forEach items="${activeClassroom}" var="activeClassroom">
-
-                                                    <option id="${activeClassroom.id}" data-max-student="${activeClassroom.maxCountOfStudents}" value="${activeClassroom.id}">${activeClassroom.name}</option>
-
-                                                </c:forEach>
-                                            </c:if>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Prowadzący:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <select class="form-control" id="lecturer" name="lecturer">
-                                            <optgroup id="employeeList">
-                                                <c:forEach items="${employeList}" var="employeList">
-                                                    <option>${employeList.firstName} ${employeList.lastName}</option>
-                                                </c:forEach>
-                                            </optgroup>
-                                            <optgroup id="isLecturer" label="Wykładowcy" hidden>
-                                                <c:forEach items="${lecturerEmployee}" var="employeeLecturer">
-                                                    <option>${employeeLecturer.firstName} ${employeeLecturer.lastName}</option>
-                                                </c:forEach>
-                                            </optgroup>
-                                            <optgroup id="isParamedic" label="Medycy" hidden>
-                                                <c:forEach items="${paramedicEmployee}" var="paramedicEmployee">
-                                                    <option>${paramedicEmployee.firstName} ${paramedicEmployee.lastName}</option>
-                                                </c:forEach>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-header">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Maksymalna ilość uczestnikow:</p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control"
-                                           id="maxCountOfStudents"
-                                           name="maxCountOfStudents" value="0">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,7 +210,7 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <a href="/courses" class="btn btn-block btn-danger">Anuluj</a>
+                                    <a href="/lectures" class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
@@ -242,28 +232,28 @@
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
 <script>
 
-    function getMaxCountOfStudent(){
-
+    function getMaxCountOfStudent() {
         let place = document.getElementById("place")
         place.setAttribute("max-student", place.value)
         let maxStudent = document.getElementById("place").getAttribute("max-student")
         document.getElementById("maxCountOfStudents").value = document.getElementById(maxStudent).getAttribute("data-max-student")
     }
-    function  getValueType(){
+
+    function getValueType() {
         const nameType = "szkolenie z pierwszej pomocy";
         let dataTypeValue = document.getElementById("type").value;
         let employeeList = document.getElementById("employeeList");
         let isParamedic = document.getElementById("isParamedic");
         let isLecturer = document.getElementById("isLecturer");
 
-        if  (dataTypeValue === nameType){
-            employeeList.setAttribute("hidden","hidden");
+        if (dataTypeValue === nameType) {
+            employeeList.setAttribute("hidden", "hidden");
             isParamedic.removeAttribute("hidden");
-            isLecturer.setAttribute("hidden","hidden");
+            isLecturer.setAttribute("hidden", "hidden");
         } else {
-            employeeList.setAttribute("hidden","hidden");
+            employeeList.setAttribute("hidden", "hidden");
             isLecturer.removeAttribute("hidden");
-            isParamedic.setAttribute("hidden","hidden");
+            isParamedic.setAttribute("hidden", "hidden");
         }
     }
 </script>

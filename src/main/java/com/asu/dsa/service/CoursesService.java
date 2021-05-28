@@ -61,7 +61,7 @@ public class CoursesService {
         return course;
     }
 
-    // list for all course types
+    // list of all course types
     public List<Course.CourseType> getAllCoursesTypes() {
         List<Course.CourseType> typesList = Arrays.asList(Course.CourseType.values());
         return typesList;

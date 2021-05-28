@@ -23,11 +23,15 @@ public class Lecture {
     private Long id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate lectureDay;
-    @DateTimeFormat(pattern = "kk-mm")
+    @DateTimeFormat(pattern = "hh:mm")
     private LocalTime lectureBegin;
-    @DateTimeFormat(pattern = "kk-mm")
+    @DateTimeFormat(pattern = "hh:mm")
     private LocalTime lectureEnd;
     private String agenda;
+    private LectureType lectureType;
+    public enum LectureType {
+        TEORIA, PRAKTYKA, PIERWSZA_POMOC
+    }
 
     // students list
     // attendance list

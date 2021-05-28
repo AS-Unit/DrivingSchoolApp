@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @AllArgsConstructor
@@ -30,6 +31,12 @@ public class LecturesService {
                 .<NoLectureFoundException>orElseThrow(() -> {
                     throw new NoLectureFoundException(id);
                 });
+    }
+
+    // list of all lectures types
+    public List<Lecture.LectureType> getAllLecturesTypes() {
+        List<Lecture.LectureType> lectureTypes = Arrays.asList(Lecture.LectureType.values());
+        return lectureTypes;
     }
 
 /*    // get lectures by course
@@ -59,4 +66,6 @@ public class LecturesService {
                 });
         lecturesRepository.delete(lecture);
     }
+
+
 }

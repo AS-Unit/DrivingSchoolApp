@@ -92,13 +92,13 @@
         )
 
         //Timepicker
-        $('#reservationdate, #permissionExpirationDate, #drivingLicenseExpirationDate, #dateEdit, #dateCreate, #dateCreateEmployee, #dateEditEmployee, #startCourseDate, #finishCourseDate, #validityOfInsurance, #validityOfTechnicalReview, #startNotice, #endNotice').datetimepicker({
+        $('#reservationdate, #permissionExpirationDate, #drivingLicenseExpirationDate, #dateEdit, #dateCreate, #dateCreateEmployee, #dateEditEmployee, #startCourseDate, #finishCourseDate, #validityOfInsurance, #validityOfTechnicalReview, #startNotice, #endNotice, #lectureDay').datetimepicker({
             format: 'YYYY-MM-DD'
         });
 
         //Timepicker
-        $('#startCourseTime, #finishCourseTime').datetimepicker({
-            format: 'kk-mm'
+        $('#lectureBegin, #lectureEnd').datetimepicker({
+            format: 'hh:mm'
         });
 
         //Bootstrap Duallistbox

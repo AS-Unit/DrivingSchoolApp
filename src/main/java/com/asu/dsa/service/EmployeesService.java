@@ -40,7 +40,7 @@ public class EmployeesService {
 
     //get all employee who are Instructor
     public List<Employee> getAllInstructors (String isInstructor){
-        return employeesRepository.findAllByIsParamedic(isInstructor);
+        return employeesRepository.findAllByIsInstructor(isInstructor);
     }
 
     // add employee

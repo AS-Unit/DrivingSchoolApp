@@ -47,12 +47,12 @@ public class LecturesController {
     public String viewNewLecture(Model model) {
         List<Classroom> listClassroom = classroomsService.getAllClassrooms();
         model.addAttribute("classroomList", listClassroom);
-        List<Employee> listLecturerEmployees = employeesService.getAllEmployee();
+        List<Employee> listLecturerEmployees = employeesService.getAllLecturerEmployees("true");
         model.addAttribute("lecturerEmployee", listLecturerEmployees);
-        List<Employee> instructorsList = employeesService.getAllEmployee();
-        model.addAttribute("instructorsList", listLecturerEmployees);
-        List<Employee> firstAidLecturerList = employeesService.getAllEmployee();
-        model.addAttribute("firstAidLecturerList", listLecturerEmployees);
+        List<Employee> instructorsList = employeesService.getAllInstructors("true");
+        model.addAttribute("instructorsList", instructorsList);
+        List<Employee> firstAidLecturerList = employeesService.getAllParamedicEmployees("true");
+        model.addAttribute("firstAidLecturerList", firstAidLecturerList);
         List<Course> courseList = coursesService.getAllCourses();
         model.addAttribute("courseList",courseList);
         List<Lecture.LectureType> lectureTypesList = lecturesService.getAllLecturesTypes();

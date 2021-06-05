@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <select class="form-control" id="lectureType" name="lectureType">
+                                        <select class="form-control" id="lectureType" name="lectureType" onchange="getLectureType()">
                                             <option hidden>wybierz</option>
                                             <c:forEach items="${lecturesTypesList}" var="lecturesType">
                                                 <option><c:out value="${lecturesType}"/></option>
@@ -248,21 +248,27 @@
         document.getElementById("maxCountOfStudents").value = document.getElementById(maxStudent).getAttribute("data-max-student")
     }
 
-    function getValueType() {
-        const nameType = "szkolenie z pierwszej pomocy";
-        let dataTypeValue = document.getElementById("type").value;
-        let employeeList = document.getElementById("employeeList");
+    function getLectureType() {
+        const teoriaType = "TEORIA";
+        const praktykaType = "PRAKTYKA"
+        let dataTypeValue = document.getElementById("lectureType").value;
+
+        let isInstructor = document.getElementById("isInstructor");
         let isParamedic = document.getElementById("isParamedic");
         let isLecturer = document.getElementById("isLecturer");
 
-        if (dataTypeValue === nameType) {
-            employeeList.setAttribute("hidden", "hidden");
-            isParamedic.removeAttribute("hidden");
-            isLecturer.setAttribute("hidden", "hidden");
-        } else {
-            employeeList.setAttribute("hidden", "hidden");
+        if (dataTypeValue === teoriaType) {
             isLecturer.removeAttribute("hidden");
+            isInstructor.setAttribute("hidden","hidden");
             isParamedic.setAttribute("hidden", "hidden");
+        } else if (dataTypeValue === praktykaType) {
+            isInstructor.removeAttribute("hidden");
+            isLecturer.setAttribute("hidden", "hidden");
+            isParamedic.setAttribute("hidden", "hidden");
+        } else {
+            isParamedic.removeAttribute("hidden");
+            isInstructor.setAttribute("hidden","hidden");
+            isLecturer.setAttribute("hidden", "hidden");
         }
     }
 </script>

@@ -23,9 +23,9 @@ public class Lecture {
     private Long id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate lectureDay;
-    @DateTimeFormat(pattern = "hh:mm")
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime lectureBegin;
-    @DateTimeFormat(pattern = "hh:mm")
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime lectureEnd;
     private String agenda;
     private LectureType lectureType;

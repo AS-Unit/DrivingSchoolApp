@@ -41,98 +41,6 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <p>Data rozpoczęcia zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group date"
-                                         id="startCourseDate"
-                                         data-target-input="nearest">
-                                        <input type="text"
-                                               class="form-control datetimepicker"
-                                               data-target="#startCourseDate"
-                                               name="startCourseDate">
-                                        <div class="input-group-append"
-                                             data-target="#startCourseDate"
-                                             data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Data zakończenia zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group date"
-                                         id="finishCourseDate"
-                                         data-target-input="nearest">
-                                        <input type="text"
-                                               class="form-control datetimepicker"
-                                               data-target="#finishCourseDate"
-                                               name="finishCourseDate">
-                                        <div class="input-group-append"
-                                             data-target="#finishCourseDate"
-                                             data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Godziny rozpoczęcia zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group date"
-                                         id="startCourseTime"
-                                         data-target-input="nearest">
-                                        <input type="text"
-                                               class="form-control datetimepicker"
-                                               data-target="startCourseTime"
-                                               name="startCourseTime">
-                                        <div class="input-group-append"
-                                             data-target="#startCourseTime"
-                                             data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Godzina zakończenia zajęć:</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="input-group date"
-                                         id="finishCourseTime"
-                                         data-target-input="nearest">
-                                        <input type="text"
-                                               class="form-control datetimepicker"
-                                               data-target="finishCourseTime"
-                                               name="finishCourseTime">
-                                        <div class="input-group-append"
-                                             data-target="#finishCourseTime"
-                                             data-toggle="datetimepicker">
-                                            <div class="input-group-text"><i class="fa fa-clock"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-sm-4">
                                     <p>Rodzaj:</p>
                                 </div>
                                 <div class="col-sm-6">
@@ -264,12 +172,12 @@
 <script>
 
     function getMaxCountOfStudent(){
-
         let place = document.getElementById("place")
         place.setAttribute("max-student", place.value)
         let maxStudent = document.getElementById("place").getAttribute("max-student")
         document.getElementById("maxCountOfStudents").value = document.getElementById(maxStudent).getAttribute("data-max-student")
     }
+
 function  getValueType(){
         const nameType = "szkolenie z pierwszej pomocy";
         let dataTypeValue = document.getElementById("type").value;

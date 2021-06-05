@@ -98,7 +98,7 @@
 
         //Timepicker
         $('#lectureBegin, #lectureEnd').datetimepicker({
-            format: 'hh:mm'
+            format: 'HH:mm'
         });
 
         //Bootstrap Duallistbox

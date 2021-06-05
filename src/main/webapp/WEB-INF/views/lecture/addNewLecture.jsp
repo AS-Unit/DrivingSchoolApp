@@ -42,7 +42,7 @@
                             <!-- Row with COURSE parameter -->
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <p>Kurs:</p>
+                                    <p>ID Kursu:</p>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">
@@ -94,7 +94,6 @@
                                                 <option value="0">brak lokalizacji</option>
                                             </c:if>
                                             <c:if test="${classroomList.size() > 0}">
-                                                <option value="0">wybierz salę lekcyjną</option>
                                                 <c:forEach items="${classroomList}" var="classroom">
                                                     <option id="${classroom.id}"
                                                             data-max-student="${classroom.maxCountOfStudents}"
@@ -122,9 +121,19 @@
                                             <c:if test="${lecturerEmployee.size() == 0}">
                                                 <option value="0">brak prowadzących</option>
                                             </c:if>
+                                            <optgroup id="isInstructor" label="Instruktorzy" hidden>
+                                                <c:forEach items="${instructorsList}" var="instructorsList">
+                                                    <option>${instructorsList.firstName} ${instructorsList.lastName}</option>
+                                                </c:forEach>
+                                            </optgroup>
                                             <optgroup id="isLecturer" label="Wykładowcy" hidden>
-                                                <c:forEach items="${lecturerEmployee}" var="employeeLecturer">
-                                                    <option>${employeeLecturer.firstName} ${employeeLecturer.lastName}</option>
+                                                <c:forEach items="${lecturerEmployee}" var="lecturerEmployee">
+                                                    <option>${lecturerEmployee.firstName} ${lecturerEmployee.lastName}</option>
+                                                </c:forEach>
+                                            </optgroup>
+                                            <optgroup id="isParamedic" label="Medycy" hidden>
+                                                <c:forEach items="${firstAidLecturerList}" var="firstAidLecturerList">
+                                                    <option>${firstAidLecturerList.firstName} ${firstAidLecturerList.lastName}</option>
                                                 </c:forEach>
                                             </optgroup>
                                         </select>

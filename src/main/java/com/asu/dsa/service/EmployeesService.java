@@ -16,14 +16,12 @@ public class EmployeesService {
 
     private final EmployeesRepository employeesRepository;
 
-    //    get all employee
+    // get all employee
     public List<Employee> getAllEmployee() {
         return employeesRepository.findAll();
     }
 
-
-    //get employee by id
-
+    // get employee by id
     public Employee getEmployeeById(Long id) {
         return employeesRepository.findById(id)
                 .<NoSuchElementException>orElseThrow(() -> {
@@ -34,27 +32,30 @@ public class EmployeesService {
     public List<Employee> getAllLecturerEmployees(String isLecturer){
         return employeesRepository.findAllByIsLecturer(isLecturer);
     }
-    //get all employee who are Paramedic
+
+    //get all employee who are Paramedic (first-aid Lecturer)
     public List<Employee> getAllParamedicEmployees(String isParamedic){
         return employeesRepository.findAllByIsParamedic(isParamedic);
     }
 
-    // add employee
+    //get all employee who are Instructor
+    public List<Employee> getAllInstructors (String isInstructor){
+        return employeesRepository.findAllByIsParamedic(isInstructor);
+    }
 
+    // add employee
     public Employee addEmployee(Employee employee) {
         employee.setDateCreateEmployee(LocalDate.now());
         return employeesRepository.save(employee);
     }
 
     // update employee //todo refaktor employee
-
     public Employee updateEmployee(Employee newEmploye) {
         newEmploye.setDateModifyEmployee(LocalDate.now());
         return employeesRepository.save(newEmploye);
     }
 
     // delete employee
-
     public void removeEmployee(Long id) {
         Employee employee = employeesRepository.findById(id)
                 .<NoSuchElementException>orElseThrow(() -> {

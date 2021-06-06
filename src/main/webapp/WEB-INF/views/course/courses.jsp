@@ -88,7 +88,7 @@
                                                 <td>${course.place}</td>
                                                 <td>${course.startCourseDate}</td>
                                                 <td>${course.maxCountOfStudents}</td>
-                                                <td>${course.lecturer}</td>
+                                                <td>${course.guardian}</td>
                                                 <td>
                                                     <!--edit buton -->
                                                     <a href='<c:url value="/courses/editCourse/${course.id}"/>'

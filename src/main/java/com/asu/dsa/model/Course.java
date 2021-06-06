@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,7 +32,7 @@ public class Course {
     private LocalDate startCourseDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate finishCourseDate;
-    private String lecturer;
+    private String guardian;
     private String place;
     private int maxCountOfStudents;
     private String courseDescription;
@@ -41,4 +42,6 @@ public class Course {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateModifyCourse;
 
+    @OneToMany(mappedBy = "course")
+    private List<Lecture> lectures;
 }

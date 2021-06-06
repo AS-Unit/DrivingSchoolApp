@@ -116,24 +116,24 @@
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <select class="form-control" id="lecturer" name="lecturer">
+                                        <select class="form-control" id="employee" name="employee">
                                             <option hidden>wybierz</option>
                                             <c:if test="${lecturerEmployee.size() == 0}">
                                                 <option value="0">brak prowadzących</option>
                                             </c:if>
                                             <optgroup id="isInstructor" label="Instruktorzy" hidden>
                                                 <c:forEach items="${instructorsList}" var="instructorsList">
-                                                    <option>${instructorsList.firstName} ${instructorsList.lastName}</option>
+                                                    <option value="${instructorsList.id}">${instructorsList.firstName} ${instructorsList.lastName}</option>
                                                 </c:forEach>
                                             </optgroup>
                                             <optgroup id="isLecturer" label="Wykładowcy" hidden>
                                                 <c:forEach items="${lecturerEmployee}" var="lecturerEmployee">
-                                                    <option>${lecturerEmployee.firstName} ${lecturerEmployee.lastName}</option>
+                                                    <option value="${lecturerEmployee.id}">${lecturerEmployee.firstName} ${lecturerEmployee.lastName}</option>
                                                 </c:forEach>
                                             </optgroup>
                                             <optgroup id="isParamedic" label="Medycy" hidden>
                                                 <c:forEach items="${firstAidLecturerList}" var="firstAidLecturerList">
-                                                    <option>${firstAidLecturerList.firstName} ${firstAidLecturerList.lastName}</option>
+                                                    <option value="${firstAidLecturerList.id}">${firstAidLecturerList.firstName} ${firstAidLecturerList.lastName}</option>
                                                 </c:forEach>
                                             </optgroup>
                                         </select>
@@ -207,6 +207,16 @@
                             <!-- /. Row with START TIME LECTURE parameter -->
 
                         </div>
+
+                        <!-- Column with message or agenda -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p>Wiadomość:</p>
+                            </div>
+                            <div class="col-sm-12"><textarea class="form-control" rows="9" name="agenda"></textarea></div>
+                        </div>
+                        <!-- /. Column with message or agenda -->
+
                     </div>
                 </div>
             </div>

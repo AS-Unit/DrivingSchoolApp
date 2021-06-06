@@ -94,26 +94,17 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <p>Prowadzący:</p>
+                                    <p>Opiekun:</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <select class="form-control" id="lecturer" name="lecturer">
-                                            <optgroup id="employeeList">
+                                        <select class="form-control" id="guardian" name="guardian">
+                                            <option> Opiekun </option>
+<%--                                            <optgroup id="employeeList">
                                                 <c:forEach items="${employeList}" var="employeList">
                                                     <option>${employeList.firstName} ${employeList.lastName}</option>
                                                 </c:forEach>
-                                            </optgroup>
-                                            <optgroup id="isLecturer" label="Wykładowcy" hidden>
-                                            <c:forEach items="${lecturerEmployee}" var="employeeLecturer">
-                                            <option>${employeeLecturer.firstName} ${employeeLecturer.lastName}</option>
-                                            </c:forEach>
-                                            </optgroup>
-                                            <optgroup id="isParamedic" label="Medycy" hidden>
-                                                <c:forEach items="${paramedicEmployee}" var="paramedicEmployee">
-                                                    <option>${paramedicEmployee.firstName} ${paramedicEmployee.lastName}</option>
-                                                </c:forEach>
-                                            </optgroup>
+                                            </optgroup>--%>
                                         </select>
                                     </div>
                                 </div>

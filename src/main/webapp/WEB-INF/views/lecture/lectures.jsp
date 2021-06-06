@@ -70,8 +70,9 @@
                                         <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>
-                                            <th>Kurs</th>
-                                            <th>Lektor</th>
+                                            <th>ID Kursu</th>
+                                            <th>Typ Lekcji</th>
+                                            <th>Prowadzący</th>
                                             <th>Dzień</th>
                                             <th>Godziny</th>
                                             <th style="width: 130px"></th>
@@ -82,8 +83,9 @@
                                                    varStatus="loop">
                                             <tr>
                                                 <td>${loop.count}</td>
-                                                <td>nazwa kursu</td> <!-- todo -->
-                                                <td>imię lektora</td>
+                                                <td>${lecture.id}</td>
+                                                <td>${lecture.lectureType}</td>
+                                                <td>${lecture.employee.firstName} ${lecture.employee.lastName}</td>
                                                 <td>${lecture.lectureDay}</td>
                                                 <td>${lecture.lectureBegin} - ${lecture.lectureEnd} </td>
                                                 <td>

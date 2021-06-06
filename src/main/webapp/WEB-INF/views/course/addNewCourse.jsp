@@ -74,9 +74,9 @@
                                             </c:if>
                                             <c:if test="${activeClassroom.size() > 0}">
                                                 <option value="0">wybierz salę lekcyjną</option>
-                                            <c:forEach items="${activeClassroom}" var="classroom">
+                                            <c:forEach items="${activeClassroom}" var="place">
 
-                                                <option id="${classroom.id}" data-max-student="${classroom.maxCountOfStudents}" value="${classroom.id}">${classroom.name}</option>
+                                                <option id="${place.id}" data-max-student="${place.maxCountOfStudents}" value="${place.id}">${place.name}</option>
 
                                             </c:forEach>
                                             </c:if>

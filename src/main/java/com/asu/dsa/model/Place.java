@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Classroom {
+public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,8 +25,8 @@ public class Classroom {
     private String status;
     private int maxCountOfStudents;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateCreateClassroom;
+    private LocalDate createPlaceDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateEditClassroom;
+    private LocalDate editPlaceDate;
 }
 

@@ -1,13 +1,11 @@
 package com.asu.dsa.service;
 
-import com.asu.dsa.model.Course;
 import com.asu.dsa.model.Lecture;
-import com.asu.dsa.repository.ClassroomsRepository;
+import com.asu.dsa.repository.PlacesRepository;
 import com.asu.dsa.repository.CoursesRepository;
 import com.asu.dsa.repository.LecturesRepository;
 import com.asu.dsa.service.exception.NoLectureFoundException;
 import lombok.AllArgsConstructor;
-import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -18,7 +16,7 @@ import java.util.List;
 public class LecturesService {
     private final LecturesRepository lecturesRepository;
     private final CoursesRepository coursesRepository;
-    private final ClassroomsRepository classroomsRepository;
+    private final PlacesRepository placesRepository;
 
     // get all lectures
     public List<Lecture> getAllLectures() {

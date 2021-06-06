@@ -95,7 +95,7 @@
                         <li class="nav-item">
                             <a href='<c:url value="/employees"/>' class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
-                                <p>Kadra</p>
+                                <p>Pracownicy</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -106,20 +106,20 @@
                         </li>
                         <li class="nav-item">
                             <a href='<c:url value="/courses"/>' class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
+                                <i class="nav-icon fas fa-university"></i>
                                 <p>Kursy</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href='<c:url value="/lectures"/>' class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
-                                <p>Lekcje</p>
+                                <p>Lekcje i Jazdy</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href='<c:url value="/classrooms"/>' class="nav-link">
-                                <i class="nav-icon fas fa-door-open"></i>
-                                <p>Sale lekcyjne</p>
+                            <a href='<c:url value="/places"/>' class="nav-link">
+                                <i class="nav-icon fas fa-map-marker"></i>
+                                <p>Miejsca</p>
                             </a>
                         </li>
                         <li class="nav-item">

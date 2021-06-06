@@ -18,13 +18,12 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-
         <div class="card-info">
             <div class="card-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h4 class="m-0 text-dark">Dane sali szkoleniowej</h4>
+                            <h4 class="m-0 text-dark">Miejsce</h4>
                         </div><!-- /.col -->
 
                     </div><!-- /.row -->
@@ -32,7 +31,7 @@
             </div>
         </div>
         <!-- /.content-header -->
-        <form name="sendEditEmployee" method="post" action='<c:url value="/classrooms/editClassroom/${classroom.id}"/>'>
+        <form method="post" action='<c:url value="/places/addNewPlace"/>'>
             <!-- Main content -->
             <div class="card-body">
                 <div class="container-fluid">
@@ -43,8 +42,7 @@
                                     <p>Nazwa:</p>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control" placeholder="" id="name" name="name"
-                                           value="${classroom.name}" readonly>
+                                    <input type="text" class="form-control" placeholder="" id="name" name="name">
                                 </div>
                             </div>
                         </div>
@@ -63,20 +61,9 @@
                                     <div class="form-group">
 
                                         <select class="form-control" id="trainingPlace" name="trainingPlace">
-                                            <option>${classroom.trainingPlace}</option>
-                                            <c:if test='${classroom.trainingPlace.equals("Miejsce 1")}'>
-                                                <option>Miejsce 2</option>
-                                                <option>Miejsce 3</option>
-                                            </c:if>
-                                            <c:if test='${classroom.trainingPlace.equals("Miejsce 2")}'>
-                                                <option>Miejsce 1</option>
-                                                <option>Miejsce 3</option>
-                                            </c:if>
-                                            <c:if test='${classroom.trainingPlace.equals("Miejsce 3")}'>
-                                                <option>Miejsce 1</option>
-                                                <option>Miejsce 2</option>
-                                            </c:if>
-
+                                            <option>Miejsce 1</option>
+                                            <option>Miejsce 2</option>
+                                            <option>Miejsce 3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -97,13 +84,8 @@
                                     <div class="form-group">
 
                                         <select class="form-control" id="status" name="status">
-                                            <option>${classroom.status}</option>
-                                            <c:if test='${classroom.status.equals("aktywna")}'>
-                                                <option>zawieszona</option>
-                                            </c:if>
-                                            <c:if test='${classroom.status.equals("zawieszona")}'>
-                                                <option>aktywna</option>
-                                            </c:if>
+                                            <option>aktywna</option>
+                                            <option>zawieszona</option>
                                         </select>
                                     </div>
                                 </div>
@@ -122,13 +104,15 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <input type="number" class="form-control" id="maxCountOfStudents"
-                                           name="maxCountOfStudents" value="${classroom.maxCountOfStudents}">
+                                           name="maxCountOfStudents" value="30">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- edit info -->
             <div class="card-body">
                 <div class="container-fluid">
                     <div class="row">
@@ -137,40 +121,23 @@
                             <div class="row">
 
                                 <div class="col-sm-4">
-
-                                    <a href="/classrooms" class="btn btn-block btn-danger">Anuluj</a>
-
+                                    <a href="/places" class="btn btn-block btn-danger">Anuluj</a>
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-2">
-                            <div class="input-group date" id="dateCreate" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateCreate"
-                                       id="dateCreateClassroom" name="dateCreateClassroom"
-                                       value="${classroom.dateCreateClassroom}" readonly/>
-                            </div>
-                            <p class="text-center">Data utworzenia recordu</p>
-                        </div>
-
-                        <div class="col-md-2">
-                            <div class="input-group date" id="dateEdit" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#dateEdit"
-                                       id="dateEditClassroom" name="dateEditClassroom"
-                                       value="${classroom.dateEditClassroom}" readonly/>
-                            </div>
-                            <p class="text-center">Data Ostatniej Modyfikacji</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- ./edit info -->
+            <!-- /.content -->
         </form>
-        <!-- /.content -->
     </div>
-    <!-- footer -->
+    <!-- /.content-wrapper -->
+    <!--    footer    -->
     <%@include file="/WEB-INF/views/dynamic/footer.jspf" %>
     <!--    /.footer    -->
 
@@ -181,4 +148,3 @@
 <%@include file="/WEB-INF/views/dynamic/js.jspf" %>
 </body>
 </html>
-

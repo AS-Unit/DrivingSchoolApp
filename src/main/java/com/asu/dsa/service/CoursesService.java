@@ -1,8 +1,8 @@
 package com.asu.dsa.service;
 
-import com.asu.dsa.model.Classroom;
+import com.asu.dsa.model.Place;
 import com.asu.dsa.model.Course;
-import com.asu.dsa.repository.ClassroomsRepository;
+import com.asu.dsa.repository.PlacesRepository;
 import com.asu.dsa.repository.CoursesRepository;
 import com.asu.dsa.service.exception.NoCourseFoundException;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.Optional;
 @Service
 public class CoursesService {
     private final CoursesRepository coursesRepository;
-    private final ClassroomsRepository classroomsRepository;
+    private final PlacesRepository placesRepository;
 
     // get all course
     public List<Course> getAllCourses() {
@@ -39,7 +39,7 @@ public class CoursesService {
         if (course.getPlace().equals("0")){
             course.setPlace("nie podano miejsca");
         } else {
-            Optional<Classroom> classroom = classroomsRepository.findById(Long.parseLong(course.getPlace()));
+            Optional<Place> classroom = placesRepository.findById(Long.parseLong(course.getPlace()));
             course.setPlace(classroom.get().getName());
         }
         return coursesRepository.save(course);

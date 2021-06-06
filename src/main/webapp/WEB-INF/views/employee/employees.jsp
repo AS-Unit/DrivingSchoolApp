@@ -27,7 +27,7 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h4><i class="nav-icon fas fa-users"></i> Kadra</h4>
+                                        <h4><i class="nav-icon fas fa-users" ></i> Kadra</h4>
                                     </div>
                                 </div>
                             </div>

@@ -94,10 +94,10 @@
                                                 <option value="0">brak lokalizacji</option>
                                             </c:if>
                                             <c:if test="${classroomList.size() > 0}">
-                                                <c:forEach items="${classroomList}" var="classroom">
-                                                    <option id="${classroom.id}"
-                                                            data-max-student="${classroom.maxCountOfStudents}"
-                                                            value="${classroom.id}">${classroom.name}</option>
+                                                <c:forEach items="${classroomList}" var="place">
+                                                    <option id="${place.id}"
+                                                            data-max-student="${place.maxCountOfStudents}"
+                                                            value="${place.id}">${place.name}</option>
                                                 </c:forEach>
                                             </c:if>
                                         </select>

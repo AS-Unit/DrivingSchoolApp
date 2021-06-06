@@ -18,7 +18,6 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -28,9 +27,7 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h4><i class="nav-icon fas fa-door-open"></i>
-
-                                            Sale wykładowe</h4>
+                                        <h4><i class="nav-icon fas fa-map-marker"></i>   Miejsca</h4>
                                     </div>
                                 </div>
                             </div>
@@ -41,9 +38,7 @@
 
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <a href='<c:url value="/classrooms/addNewClassroom"/>'
-                                               class="btn btn-block btn-primary btn-lg">Dodaj
-                                                salę <i class="nav-icon fas fa-plus"></i></a>
+                                            <a href='<c:url value="/places/addNewPlace"/>' class="btn btn-block btn-primary btn-lg">Dodaj miejsce  <i class="nav-icon fas fa-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -81,23 +76,23 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach begin="0" step="1" end="10" items="${classroom}" var="classroom"
+                                        <c:forEach begin="0" step="1" end="10" items="${place}" var="place"
                                                    varStatus="loop">
                                             <tr>
                                                 <td>${loop.count}</td>
-                                                <td>${classroom.name}</td>
-                                                <td>${classroom.trainingPlace}</td>
-                                                <td>${classroom.maxCountOfStudents}</td>
-                                                <td>${classroom.status}</td>
+                                                <td>${place.name}</td>
+                                                <td>${place.trainingPlace}</td>
+                                                <td>${place.maxCountOfStudents}</td>
+                                                <td>${place.status}</td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="col md-6">
-                                                            <a href='<c:url value="/classrooms/editClassroom/${classroom.id}"/>'
+                                                            <a href='<c:url value="/places/editPlace/${place.id}"/>'
                                                                class="btn btn-success bg-gradient-success"
                                                                style="width: 45px"><i class="fas fa-edit"></i></a>
                                                         </div>
                                                         <div class="col md-6">
-                                                            <a href="/classrooms/delete/${classroom.id}"
+                                                            <a href="/places/delete/${place.id}"
                                                                style="width: 45px"
                                                                class="btn btn-success bg-gradient-danger"
                                                                data-toggle="modal"

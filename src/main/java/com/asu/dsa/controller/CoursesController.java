@@ -1,9 +1,9 @@
 package com.asu.dsa.controller;
 
-import com.asu.dsa.model.Classroom;
+import com.asu.dsa.model.Place;
 import com.asu.dsa.model.Course;
 import com.asu.dsa.model.Employee;
-import com.asu.dsa.service.ClassroomsService;
+import com.asu.dsa.service.PlacesService;
 import com.asu.dsa.service.CoursesService;
 import com.asu.dsa.service.EmployeesService;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.List;
 public class CoursesController {
 
     private final CoursesService coursesService;
-    private final ClassroomsService classroomsService;
+    private final PlacesService placesService;
     private final EmployeesService employeesService;
     // get all courses list
     @GetMapping
@@ -42,8 +42,8 @@ public class CoursesController {
     // get view for add new course
     @GetMapping("addNewCourse")
     public String getViewForNewCorse(Model model) {
-        List<Classroom> listClassroom = classroomsService.getAllClassroomsByStatus("aktywna");
-        model.addAttribute("activeClassroom", listClassroom);
+        List<Place> listPlace = placesService.getAllPlacesByStatus("aktywna");
+        model.addAttribute("activeClassroom", listPlace);
         List<Employee> employeeList = employeesService.getAllEmployee();
         model.addAttribute("employeList",employeeList);
         List<Employee> listLecturerEmployees = employeesService.getAllLecturerEmployees("true");

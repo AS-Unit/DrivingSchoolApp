@@ -1,10 +1,10 @@
 package com.asu.dsa.controller;
 
-import com.asu.dsa.model.Classroom;
+import com.asu.dsa.model.Place;
 import com.asu.dsa.model.Course;
 import com.asu.dsa.model.Employee;
 import com.asu.dsa.model.Lecture;
-import com.asu.dsa.service.ClassroomsService;
+import com.asu.dsa.service.PlacesService;
 import com.asu.dsa.service.CoursesService;
 import com.asu.dsa.service.EmployeesService;
 import com.asu.dsa.service.LecturesService;
@@ -22,7 +22,7 @@ import java.util.List;
 public class LecturesController {
     private final LecturesService lecturesService;
     private final CoursesService coursesService;
-    private final ClassroomsService classroomsService;
+    private final PlacesService placesService;
     private final EmployeesService employeesService;
 
     // get all lectures list
@@ -45,8 +45,8 @@ public class LecturesController {
     // get view for adding new lecture
     @GetMapping("addNewLecture")
     public String viewNewLecture(Model model) {
-        List<Classroom> listClassroom = classroomsService.getAllClassrooms();
-        model.addAttribute("classroomList", listClassroom);
+        List<Place> listPlace = placesService.getAllPlaces();
+        model.addAttribute("classroomList", listPlace);
         List<Employee> listLecturerEmployees = employeesService.getAllLecturerEmployees("true");
         model.addAttribute("lecturerEmployee", listLecturerEmployees);
         List<Employee> instructorsList = employeesService.getAllInstructors("true");

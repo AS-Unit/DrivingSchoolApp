@@ -1,0 +1,46 @@
+package com.asu.dsa.service;
+
+import com.asu.dsa.model.Driving;
+import com.asu.dsa.repository.DrivingsRepository;
+import com.asu.dsa.service.exception.NoDrivingFoundException;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@AllArgsConstructor
+@Service
+public class DrivingsService {
+    private final DrivingsRepository drivingsRepository;
+
+    // get all
+    public List<Driving> getAllDrivings() {
+        return drivingsRepository.findAll();
+    }
+
+    // get by id
+    public Driving getDrivingById(Long id) {
+        return drivingsRepository.findById(id)
+                .orElseThrow(() -> {
+                    throw new NoDrivingFoundException(id);
+                });
+    }
+
+    // add new
+    public Driving addDriving(Driving driving) {
+        return drivingsRepository.save(driving);
+    }
+
+    // update record
+    public Driving updateDriving(Driving newDriving) {
+        return drivingsRepository.save(newDriving);
+    }
+
+    // remove record
+    public void deleteDriving(Long id) {
+        Driving driving = drivingsRepository.findById(id)
+                .orElseThrow(() -> {
+                    throw new NoDrivingFoundException(id);
+                });
+    }
+}

@@ -27,13 +27,13 @@ public class DrivingsService {
     }
 
     // add new
-    public Driving addDriving(Driving driving) {
-        return drivingsRepository.save(driving);
+    public Driving addDriving(Driving newDriving) {
+        return drivingsRepository.save(newDriving);
     }
 
     // update record
-    public Driving updateDriving(Driving newDriving) {
-        return drivingsRepository.save(newDriving);
+    public Driving updateDriving(Driving editedDriving) {
+        return drivingsRepository.save(editedDriving);
     }
 
     // remove record

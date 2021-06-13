@@ -1,20 +1,27 @@
 package com.asu.dsa.controller;
 
-import com.asu.dsa.model.Driving;
-import com.asu.dsa.service.DrivingsService;
+import com.asu.dsa.model.*;
+import com.asu.dsa.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Arrays;
 import java.util.List;
 
-@Controller
 @AllArgsConstructor
 @RequestMapping("/drivings")
+@Controller
 public class DrivingsController {
     private final DrivingsService drivingsService;
+    private final EmployeesService employeesService;
+    private final CoursesService coursesService;
+    private final PlacesService placesService;
+    private final StudentsService studentsService;
+    private final VehiclesService vehiclesService;
+
 
     // get full list of all
     @GetMapping
@@ -27,17 +34,29 @@ public class DrivingsController {
     // get view for adding
     @GetMapping("addNewDriving")
     public String viewNewDriving(Model model) {
-        // relations
+        //List<Category> categoryList
+        List<Employee> instructorsList = employeesService.getAllInstructors("true");
+        model.addAttribute("instructorsList", instructorsList);
+        List<Place> placesList = placesService.getAllPlaces();
+        model.addAttribute("placesList", placesList);
+        List<Course> coursesList = coursesService.getAllCourses();
+        model.addAttribute("coursesList", coursesList);
+        List<Student> studentsList = studentsService.getAllStudent();
+        model.addAttribute("studentsList", studentsList);
+        List<Vehicle> vehiclesList = vehiclesService.getAllVehicles();
+        model.addAttribute("vehiclesList", vehiclesList);
+        List<Category> categoryList = Arrays.asList(Category.values());
+        model.addAttribute("categoryList", categoryList);
         return "views/driving/addNewDriving";
     }
 
-    // get view for edition
+/*    // get view for edition
     @GetMapping("editDriving/{id}")
     public String viewEditDriving(@PathVariable("id") Long id, Model model) {
         Driving driving = drivingsService.getDrivingById(id);
         model.addAttribute("driving", driving);
         return "views/driving/editDriving;";
-    }
+    }*/
 
     // save new record
     @PostMapping("addNewDriving")
@@ -47,9 +66,9 @@ public class DrivingsController {
     }
 
     // save changes after edition
-    @PostMapping("addNewDriving")
+    @PostMapping("editDriving/{id}")
     public RedirectView updateDriving(@ModelAttribute Driving editedDriving) {
-        drivingsService.addDriving(editedDriving);
+        drivingsService.updateDriving(editedDriving);
         return new RedirectView("/drivings");
     }
 

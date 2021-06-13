@@ -50,6 +50,8 @@ public class Employee {
 
     @OneToMany(mappedBy = "employee")
     private List<Lecture> lectures;
+    @OneToMany(mappedBy = "employee")
+    private List<Driving> drivingsList;
 
 }
 

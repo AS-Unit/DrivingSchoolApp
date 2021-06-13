@@ -45,14 +45,13 @@ public class CoursesController {
         List<Place> listPlace = placesService.getAllPlacesByStatus("aktywna");
         model.addAttribute("activeClassroom", listPlace);
         List<Employee> employeeList = employeesService.getAllEmployee();
-        model.addAttribute("employeList",employeeList);
+        model.addAttribute("employeeList",employeeList);
         List<Employee> listLecturerEmployees = employeesService.getAllLecturerEmployees("true");
         model.addAttribute("lecturerEmployee", listLecturerEmployees);
         List<Employee> listParamedicEmployee = employeesService.getAllParamedicEmployees("true");
         model.addAttribute("paramedicEmployee", listParamedicEmployee);
         List<Course.CourseType> courseTypeList = coursesService.getAllCoursesTypes();
         model.addAttribute("courseTypeList",courseTypeList);
-
         return "views/course/addNewCourse";
     }
 

@@ -92,12 +92,12 @@
         )
 
         //Timepicker
-        $('#reservationdate, #permissionExpirationDate, #drivingLicenseExpirationDate, #dateEdit, #dateCreate, #dateCreateEmployee, #dateEditEmployee, #startCourseDate, #finishCourseDate, #validityOfInsurance, #validityOfTechnicalReview, #startMessage, #endMessage,#editStartMessage,#editEndMessage, #lectureDay').datetimepicker({
+        $('#reservationdate, #permissionExpirationDate, #drivingLicenseExpirationDate, #dateEdit, #dateCreate, #dateCreateEmployee, #dateEditEmployee, #startCourseDate, #finishCourseDate, #validityOfInsurance, #validityOfTechnicalReview, #startMessage, #endMessage,#editStartMessage,#editEndMessage, #lectureDay, #drivingDay').datetimepicker({
             format: 'YYYY-MM-DD'
         });
 
         //Timepicker
-        $('#lectureBegin, #lectureEnd').datetimepicker({
+        $('#lectureBegin, #lectureEnd, #drivingBeginTime, #drivingEndTime').datetimepicker({
             format: 'HH:mm'
         });
 

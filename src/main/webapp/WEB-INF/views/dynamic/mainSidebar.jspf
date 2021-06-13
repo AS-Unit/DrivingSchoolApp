@@ -113,7 +113,13 @@
                         <li class="nav-item">
                             <a href='<c:url value="/lectures"/>' class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
-                                <p>Lekcje i Jazdy</p>
+                                <p>Lekcje</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href='<c:url value="/drivings"/>' class="nav-link">
+                                <i class="nav-icon fas fa-car"></i>
+                                <p>Jazdy</p>
                             </a>
                         </li>
                         <li class="nav-item">

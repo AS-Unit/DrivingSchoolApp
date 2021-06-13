@@ -18,19 +18,24 @@ public class Driving {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Category category;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate drivingDay;
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime drivingBeginTime;
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime drivingEndTime;
-    private String drivingBeginPlace;
-    private String drivingEndPlace;
 
     @ManyToOne
     private Employee employee;
-
     @ManyToOne
     private Course course;
+    @ManyToOne
+    private Vehicle vehicle;
+    @ManyToOne
+    private Student student;
+    @ManyToOne
+    private Place place;
+
 
 }

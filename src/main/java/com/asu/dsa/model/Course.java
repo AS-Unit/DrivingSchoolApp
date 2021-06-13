@@ -44,4 +44,6 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private List<Lecture> lectures;
+    @OneToMany(mappedBy = "course")
+    private List<Driving> drivingList;
 }

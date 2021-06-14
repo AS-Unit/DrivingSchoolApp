@@ -27,5 +27,6 @@ public class Message {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endMessageData;
     private String employeeAdding;
+    private String isVisible;
 
 }

@@ -10,6 +10,7 @@ public interface MessagesRepository extends JpaRepository<Message, Long> {
 
     List<Message> findAllByMessageType(String messageType);
 
-    @Query(value = "SELECT * FROM Message WHERE current_date BETWEEN START_MESSAGE_DATA AND END_MESSAGE_DATA", nativeQuery = true)
+    @Query(value = "SELECT * FROM Message WHERE current_date BETWEEN START_MESSAGE_DATA AND END_MESSAGE_DATA AND IS_VISIBLE = 'isVisible'", nativeQuery = true)
     List<Message> showOnlyActiveMessage();
+
 }

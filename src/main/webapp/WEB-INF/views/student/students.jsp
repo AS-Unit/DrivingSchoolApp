@@ -3,7 +3,7 @@
 <jsp:useBean id="now" class="java.util.Date"/>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@include file="/WEB-INF/views/dynamic/css.jspf" %>
-
+<html>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -17,7 +17,6 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
 
         <!-- Main content -->
         <section class="content">
@@ -46,28 +45,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-header">
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <h5>Pokaż
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-default">10</button>
-                                                    <button type="button"
-                                                            class="btn btn-default dropdown-toggle dropdown-icon"
-                                                            data-toggle="dropdown">
-                                                        <div class="dropdown-menu" role="menu">
-                                                            <a class="dropdown-item" href="#">20</a>
-                                                            <a class="dropdown-item" href="#">30</a>
-                                                            <a class="dropdown-item" href="#">40</a>
-                                                        </div>
-                                                    </button>
-                                                </div>
-                                                pozycji
-                                            </h5>
 
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="card-body">
                                     <table class="table table-bordered">
                                         <thead>
@@ -76,6 +54,8 @@
                                             <th>Nazwisko</th>
                                             <th>Imię</th>
                                             <th>Numer Indeksu</th>
+                                            <th>Kurs</th>
+                                            <th>Opiekun</th>
                                             <th>Miasto</th>
                                             <th style="width: 130px"></th>
                                         </tr>
@@ -89,6 +69,8 @@
                                                 <td>${student.lastName}</td>
                                                 <td>${student.firstName}</td>
                                                 <td>${student.noIndex}</td>
+                                                <td>${student.course}</td>
+                                                <td>${student.guardian}</td>
                                                 <td>${student.city}</td>
                                                 <td>
                                                     <!--edit buton -->

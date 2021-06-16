@@ -31,4 +31,11 @@ public class Student {
 
     @OneToMany(mappedBy = "student")
     private List<Driving> drivingList;
+    @OneToMany(mappedBy = "student")
+    private List<Lecture> lectureList;
+    @ManyToOne
+    private Course course;
+    @ManyToOne
+    private Employee guardian;
+
 }

@@ -30,7 +30,6 @@ public class Lecture {
 
     @ManyToOne
     private Employee employee;
-
     @ManyToOne
     private Course course;
 

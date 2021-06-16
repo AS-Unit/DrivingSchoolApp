@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @AllArgsConstructor
 @Service
@@ -21,7 +22,7 @@ public class DrivingsService {
     // get by id
     public Driving getDrivingById(Long id) {
         return drivingsRepository.findById(id)
-                .orElseThrow(() -> {
+                .<NoSuchElementException>orElseThrow(() -> {
                     throw new NoDrivingFoundException(id);
                 });
     }
@@ -39,7 +40,7 @@ public class DrivingsService {
     // remove record
     public void deleteDriving(Long id) {
         Driving driving = drivingsRepository.findById(id)
-                .orElseThrow(() -> {
+                .<NoSuchElementException>orElseThrow(() -> {
                     throw new NoDrivingFoundException(id);
                 });
     }

@@ -16,6 +16,11 @@ public class MessagesService {
     private final MessagesRepository messagesRepository;
 
     //get all messages
+    public List<Message> showAllMessages() {
+        return messagesRepository.findAll();
+    }
+
+    //get all active messages
     public List<Message> showOnlyActiveMessage() {
         return messagesRepository.showOnlyActiveMessage();
 

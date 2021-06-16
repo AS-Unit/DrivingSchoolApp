@@ -1,6 +1,7 @@
 package com.asu.dsa.controller;
 
 import com.asu.dsa.model.*;
+import com.asu.dsa.model.enums.Category;
 import com.asu.dsa.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;

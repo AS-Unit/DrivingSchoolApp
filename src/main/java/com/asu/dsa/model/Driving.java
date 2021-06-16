@@ -1,5 +1,6 @@
 package com.asu.dsa.model;
 
+import com.asu.dsa.model.enums.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

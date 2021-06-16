@@ -4,6 +4,7 @@ import com.asu.dsa.model.Place;
 import com.asu.dsa.model.Course;
 import com.asu.dsa.model.Employee;
 import com.asu.dsa.model.Lecture;
+import com.asu.dsa.model.enums.LectureType;
 import com.asu.dsa.service.PlacesService;
 import com.asu.dsa.service.CoursesService;
 import com.asu.dsa.service.EmployeesService;
@@ -14,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Arrays;
 import java.util.List;
 
 @AllArgsConstructor
@@ -55,7 +57,7 @@ public class LecturesController {
         model.addAttribute("firstAidLecturerList", firstAidLecturerList);
         List<Course> courseList = coursesService.getAllCourses();
         model.addAttribute("courseList",courseList);
-        List<Lecture.LectureType> lectureTypesList = lecturesService.getAllLecturesTypes();
+        List<LectureType> lectureTypesList = Arrays.asList(LectureType.values());
         model.addAttribute("lecturesTypesList", lectureTypesList);
         return "views/lecture/addNewLecture";
 

@@ -3,6 +3,7 @@ package com.asu.dsa.controller;
 import com.asu.dsa.model.Place;
 import com.asu.dsa.model.Course;
 import com.asu.dsa.model.Employee;
+import com.asu.dsa.model.enums.CourseType;
 import com.asu.dsa.service.PlacesService;
 import com.asu.dsa.service.CoursesService;
 import com.asu.dsa.service.EmployeesService;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.Arrays;
 import java.util.List;
 @AllArgsConstructor
 @Controller
@@ -34,7 +36,7 @@ public class CoursesController {
     public String getCourseById(@PathVariable("id") Long id, Model model) {
         Course course = coursesService.getCourseById(id);
         model.addAttribute("course", course);
-        List<Course.CourseType> courseTypeList = coursesService.getAllCoursesTypes();
+        List<CourseType> courseTypeList = Arrays.asList(CourseType.values());
         model.addAttribute("courseTypeList",courseTypeList);
         return "views/course/editCourse";
     }
@@ -50,7 +52,7 @@ public class CoursesController {
         model.addAttribute("lecturerEmployee", listLecturerEmployees);
         List<Employee> listParamedicEmployee = employeesService.getAllParamedicEmployees("true");
         model.addAttribute("paramedicEmployee", listParamedicEmployee);
-        List<Course.CourseType> courseTypeList = coursesService.getAllCoursesTypes();
+        List<CourseType> courseTypeList = Arrays.asList(CourseType.values());
         model.addAttribute("courseTypeList",courseTypeList);
         return "views/course/addNewCourse";
     }

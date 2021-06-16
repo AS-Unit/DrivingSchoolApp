@@ -1,5 +1,6 @@
 package com.asu.dsa.model;
 
+import com.asu.dsa.model.enums.LectureType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,9 +27,6 @@ public class Lecture {
     private LocalTime lectureEnd;
     private String agenda;
     private LectureType lectureType;
-    public enum LectureType {
-        TEORIA, PRAKTYKA, PIERWSZA_POMOC
-    }
 
     @ManyToOne
     private Employee employee;

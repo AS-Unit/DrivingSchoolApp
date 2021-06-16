@@ -1,5 +1,6 @@
 package com.asu.dsa.model;
 
+import com.asu.dsa.model.enums.PlaceType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,8 @@ public class Place {
     private Long id;
 
     private String name;
-    private String trainingPlace;
+    private PlaceType placeType;
+    private String address;
     private String status;
     private int maxCountOfStudents;
     @DateTimeFormat(pattern = "yyyy-MM-dd")

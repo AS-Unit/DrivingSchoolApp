@@ -1,5 +1,6 @@
 package com.asu.dsa.model;
 
+import com.asu.dsa.model.enums.CourseType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,11 +24,7 @@ public class Course {
     @Enumerated(EnumType.STRING)
     @Column(length = 16)
     private CourseType courseType;
-    public enum CourseType {
-        WIECZOROWE, WEEKENDOWE, ONLINE
-    }
     private String category;
-
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startCourseDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")

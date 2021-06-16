@@ -31,12 +31,6 @@ public class LecturesService {
                 });
     }
 
-    // list of all lectures types
-    public List<Lecture.LectureType> getAllLecturesTypes() {
-        List<Lecture.LectureType> lectureTypes = Arrays.asList(Lecture.LectureType.values());
-        return lectureTypes;
-    }
-
 /*    // get lectures by course
     public List<Lecture> getAllLecturesByCourse(Course course) {
         return lecturesRepository.findAllByCourse(course);

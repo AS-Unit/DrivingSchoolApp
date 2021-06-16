@@ -60,11 +60,4 @@ public class CoursesService {
         coursesRepository.delete(course);
         return course;
     }
-
-    // list of all course types
-    public List<Course.CourseType> getAllCoursesTypes() {
-        List<Course.CourseType> typesList = Arrays.asList(Course.CourseType.values());
-        return typesList;
-    }
-
 }

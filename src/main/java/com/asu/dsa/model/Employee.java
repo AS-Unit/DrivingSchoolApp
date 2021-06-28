@@ -52,9 +52,7 @@ public class Employee {
     private List<Lecture> lectureList;
     @OneToMany(mappedBy = "employee")
     private List<Driving> drivingList;
-    @OneToMany(mappedBy = "employee")
-    private List<Student> studentList;
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "guardian")
     private List<Course> courseList;
 
 }

@@ -7,7 +7,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -31,11 +33,12 @@ public class Student {
 
     @OneToMany(mappedBy = "student")
     private List<Driving> drivingList;
-    @OneToMany(mappedBy = "student")
-    private List<Lecture> lectureList;
     @ManyToOne
     private Course course;
-    @ManyToOne
-    private Employee guardian;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            joinColumns = { @JoinColumn()},
+            inverseJoinColumns = { @JoinColumn()})
+    private Set<Lecture> lectureSet = new HashSet<>();
 
 }

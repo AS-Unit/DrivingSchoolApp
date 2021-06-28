@@ -70,7 +70,7 @@
                                                 <td>${student.firstName}</td>
                                                 <td>${student.noIndex}</td>
                                                 <td>${student.course}</td>
-                                                <td>${student.guardian}</td>
+                                                <td>${student.course.guardian}</td>
                                                 <td>${student.city}</td>
                                                 <td>
                                                     <!--edit buton -->

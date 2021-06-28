@@ -1,6 +1,7 @@
 package com.asu.dsa.model;
 
 import com.asu.dsa.model.enums.LectureType;
+//import com.sun.source.doctree.SerialDataTree;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -32,6 +36,8 @@ public class Lecture {
     private Employee employee;
     @ManyToOne
     private Course course;
+    @ManyToMany(mappedBy = "lectureSet", fetch = FetchType.EAGER)
+    private Set<Student> studentSet = new HashSet<>();
 
     // students list
     // attendance list

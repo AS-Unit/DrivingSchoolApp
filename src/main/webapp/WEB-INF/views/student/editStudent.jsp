@@ -44,7 +44,7 @@
                                 <p>Imię</p>
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="firstName" name="firstName" value="${student.firstName}">
+                                <input type="text" class="form-control" placeholder="" id="firstName" name="firstName" readonly value="${student.firstName}">
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
                                 <p>Nazwisko</p>
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="lastName" name="lastName" value="${student.lastName}">
+                                <input type="text" class="form-control" placeholder="" id="lastName" name="lastName" readonly value="${student.lastName}">
                             </div>
                         </div>
 
@@ -62,7 +62,7 @@
                                 <p>Indeks</p>
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="noIndex" name="noIndex" value="${student.noIndex}">
+                                <input type="text" class="form-control" placeholder="" id="noIndex" name="noIndex" readonly value="${student.noIndex}">
                             </div>
                         </div>
 
@@ -74,7 +74,7 @@
                                 <p>Miejscowość</p>
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="" id="city" name="city" value="${student.city}">
+                                <input type="text" class="form-control" placeholder="" id="city" name="city" readonly value="${student.city}">
                             </div>
                         </div>
 
@@ -87,7 +87,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask="'mask': ['999-999-999 [x99999]', '+099 99 99 999[9]-999']" data-mask id="phone" name="phone" value="${student.phone}">
+                                    <input type="text" class="form-control" data-inputmask="'mask': ['999-999-999 [x99999]', '+099 99 99 999[9]-999']" data-mask id="phone" name="phone" readonly value="${student.phone}">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                     </div>
-                                    <input type="email" class="form-control" placeholder="Email" id="mail" name="mail" value="${student.mail}">
+                                    <input type="email" class="form-control" placeholder="Email" id="mail" name="mail" readonly value="${student.mail}">
                                 </div>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                                         <div class="container-fluid">
 
                                                             <div class="row">
-                                                                <div clas="col-md-12">
+                                                                <div class="col-md-12">
                                                                     <div class="form-group">
                                                                         <select class="form-control">
                                                                             <option value="" disabled selected> Wybierz Kategorie</option>
@@ -280,6 +280,9 @@
                                 <div class="col-sm-4">
                                     <input type="submit" class="btn btn-block btn-success" value="Zapisz">
                                 </div>
+                                <div class="col-sm-4">
+                                    <input type="button" id="readonly" class="btn btn-block btn-warning" value="Odblokuj">
+                                </div>
                             </div>
 
 
@@ -292,7 +295,7 @@
                                     <input type="text" style="text-align: center"
                                            class="form-control datetimepicker-input"
                                            data-target="#dateCreate"
-                                           id="dateCreateStudent" name="dateCreateStudent"
+                                           id="creationDate" name="creationDate"
                                            value="${student.dateCreateStudent}" readonly/>
                                 </div>
                             </div>
@@ -304,7 +307,7 @@
                             <div class="input-group-append" data-target="#dateEdit">
                                 <input type="text" style="text-align: center"
                                        class="form-control datetimepicker-input" data-target="#dateEdit"
-                                       id="dateModifyStudent" name="dateModifyStudent"
+                                       id="modificationDate" name="modificationDate"
                                        value="${student.dateModifyStudent}" readonly/>
                             </div>
                         </div>
@@ -324,4 +327,5 @@
 <!-- ./wrapper -->
 
 <%@include file="/WEB-INF/views/dynamic/js.jspf"%>
-</body></html>
+
+</body>

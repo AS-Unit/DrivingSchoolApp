@@ -4,6 +4,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@include file="/WEB-INF/views/dynamic/css.jspf" %>
 <html>
+<style>
+    .container-fluid {
+        width: 50%;
+    }
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -26,37 +31,24 @@
                         <div class="card card-success">
                             <div class="card-header">
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <h4><i class="nav-icon fas fa-graduation-cap"></i>
-                                            Kursanci</h4>
-                                    </div>
+
+                                    <!-- Student Navbar -->
+                                    <%@include file="/WEB-INF/views/student/studentsNav.jspf"%>
+                                    <!-- /.Student Navbar -->
+
                                 </div>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form role="form">
                                 <div class="card-body">
-
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <a href='<c:url value="/students/addNewStudent"/>'
-                                               class="btn btn-block btn-primary btn-lg">Dodaj kursanta <i
-                                                    class="nav-icon fas fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-body">
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Nazwisko</th>
-                                            <th>Imię</th>
-                                            <th>Numer Indeksu</th>
-                                            <th>Kurs</th>
-                                            <th>Opiekun</th>
-                                            <th>Miasto</th>
+                                            <th style="width: 10px">ID</th>
+                                            <th style="align-content: space-between">Nazwisko, Imię</th>
+                                            <th style="width: 100px">Kurs</th>
+                                            <th style="align-content: center">Data Rejestracji</th>
                                             <th style="width: 130px"></th>
                                         </tr>
                                         </thead>
@@ -66,19 +58,19 @@
                                                    varStatus="loop">
                                             <tr>
                                                 <td>${loop.count}</td>
-                                                <td>${student.lastName}</td>
-                                                <td>${student.firstName}</td>
-                                                <td>${student.noIndex}</td>
+                                                <td><a href='<c:url value="/students/editStudent/${student.id}"/>'
+                                                       style="width: 40px">
+                                                        ${student.lastName}, ${student.firstName}</a>
+                                                </td>
                                                 <td>${student.course}</td>
-                                                <td>${student.course.guardian}</td>
-                                                <td>${student.city}</td>
+                                                <td>${student.dateCreateStudent}</td>
                                                 <td>
-                                                    <!--edit buton -->
+                                                    <!--edit button -->
                                                     <a href='<c:url value="/students/editStudent/${student.id}"/>'
                                                        class="btn btn-success bg-gradient-warning"
                                                        style="width: 50px"><i class="fas fa-edit"></i></a>
 
-                                                    <!-- delete buton -->
+                                                    <!-- delete button -->
                                                     <a href="students/delete/${student.id}"
                                                        class="btn btn-success bg-gradient-danger"
                                                        style="width: 45px"

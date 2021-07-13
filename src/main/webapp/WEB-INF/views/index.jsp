@@ -84,8 +84,7 @@
         $(editNumber).on('click', function (event) {
             event.preventDefault();
             const type = editNumber.attr("data-type")
-            $('#messageId').attr(10655
-            ', editNumber.attr("data-message-id"))
+            $('#messageId').attr('value', editNumber.attr("data-message-id"))
             $('#startDataMessage').attr('value', editNumber.attr("data-start"))
             $('#editDataMessage').attr('value', editNumber.attr("data-end"))
             $('#editMessageTitle').attr('value', editNumber.attr("data-title"))

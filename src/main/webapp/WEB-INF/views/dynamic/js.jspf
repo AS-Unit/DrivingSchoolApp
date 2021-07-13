@@ -125,6 +125,17 @@
             $('#deleteModal').modal();
         });
 
+        // button to remove readonly attribute
+        $('input[type=button]').click(function () {
+
+            $('input[type=text]')
+                .not("#creationDate")
+                .not("#modificationDate")
+                .removeAttr('readonly');
+            $("#mail").removeAttr('readonly');
+        })
+
+
 
     })
 </script>

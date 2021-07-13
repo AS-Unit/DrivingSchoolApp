@@ -49,9 +49,11 @@ public class Employee {
     private LocalDate dateModifyEmployee;
 
     @OneToMany(mappedBy = "employee")
-    private List<Lecture> lectures;
+    private List<Lecture> lectureList;
     @OneToMany(mappedBy = "employee")
-    private List<Driving> drivingsList;
+    private List<Driving> drivingList;
+    @OneToMany(mappedBy = "guardian")
+    private List<Course> courseList;
 
 }
 

@@ -40,7 +40,9 @@ public class Course {
     private LocalDate dateModifyCourse;
 
     @OneToMany(mappedBy = "course")
-    private List<Lecture> lectures;
+    private List<Lecture> lectureList;
     @OneToMany(mappedBy = "course")
     private List<Driving> drivingList;
+    @OneToMany(mappedBy = "course")
+    private List<Student> studentList;
 }

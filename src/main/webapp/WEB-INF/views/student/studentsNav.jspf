@@ -1,0 +1,74 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<style>
+
+    .card-success:not(.card-outline)>.card-header, .card-success:not(.card-outline)>.card-header li div a:hover {
+        color: #f0f0f0;
+        background-color: #6c757d;
+    }
+    .card-success:not(.card-outline)>.card-header li div a {
+        color: #6c757d;
+    }
+
+
+/*    .dropdown-menu>a.nav-link { //todo show Sebastian
+        background-color: #f0f0f0;
+        color: black;
+    }
+    a.dropdown-item {
+        color: black;
+    }
+
+    div.dropdown-menu {
+        color: black;
+    }
+
+    a.nav-link {
+        color:#f0f0f0;
+    }*/
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-gray-dark bg-gray">
+    <a class="navbar-brand" href="#">Kursanci</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">hj</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href='<c:url value="/students/addNewStudent"/>'>Dodaj <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="filtr"><i class="nav-icon fas fa-filter"></i></span>
+                        </div>
+                            <input class="form-control mr-sm-1" type="search" placeholder="Szukaj" aria-label="Search" style="margin-right: 0px">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon1"><i class="nav-icon fas fa-search"></i></span>
+                        </div>
+                    </div>
+                </form>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Zaznacz</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Akcja
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+                    <a class="dropdown-item" href="#">Przydziel Kurs</a>
+                    <a class="dropdown-item" href="#">Przydziel Lekcje</a>
+                    <a class="dropdown-item" href="#">Przydziel Jazdę</a>
+                    <a class="dropdown-item" href="#">Napisz wiadomość</a>
+                    <a class="dropdown-item" href="#">Dodaj kolumnę</a>
+                    <a class="dropdown-item" href="#">Usuń</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
